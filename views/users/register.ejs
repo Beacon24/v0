@@ -1,0 +1,77 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                    alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" required autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="email" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="image" class="form-label">Add a Profile Picture!</label>
+                                <input class="form-control" type="file" name="image" id="image" multiple>
+                            </div> -->
+                            <div class="mb-3">
+                                <label class="form-label" for="location">Location</label>
+                                <input class="form-control" type="text" id="location" name="location" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="bio">Bio</label>
+                                <textarea class="form-control" type="text-area" id="bio" name="bio"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Add image(s)!</label>
+                                <input class="form-control" type="file" name="image" id="image" multiple>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="offerings">Offerings</label>
+                                <textarea class="form-control" type="text-area" id="offerings" name="offerings"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>    
+                            <div class="mb-3">
+                                <label class="form-label" for="needs">Needs</label>
+                                <textarea class="form-control" type="text-area" id="needs" name="needs"></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>            
+                        </div>
+                        <button class="btn btn-success btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

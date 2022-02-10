@@ -1,0 +1,77 @@
+<% layout('/layouts/boilerplate')%>
+<div class="row">
+    <div>
+        <h1 class="text-center">New Initiative</h1>
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+            <div class="card-body">
+            <form action="/initiatives" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="title">Name</label>
+                    <input class="form-control" type="text" id="title" name="initiative[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="summary">Summary</label>
+                    <input class="form-control" type="text" id="summary" name="initiative[summary]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>                
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="initiative[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="when">When</label>
+                    <textarea class="form-control" type="text" id="when" name="initiative[when]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="summary">summary</label>
+                    <textarea class="form-control" type="text" id="summary" name="initiative[summary]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="when">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="initiative[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="offerings">What do you have to offer or share?</label>
+                    <textarea class="form-control" type="text" id="offerings" name="initiative[offerings]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="needs">What do you need, what assistance could you use?</label>
+                    <textarea class="form-control" type="text" id="needs" name="initiative[needs]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                <button class="btn-success">Add initiative</button>
+                </div>
+            </form>
+            </div>
+            </div>
+            <footer>
+                <a href="/initiatives">All initiatives</a>
+            </footer>        
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,142 @@
+APP 11 (copy of 9)
+Build out initiatives functioning.
+
+Completed:
+- Init schema, controllers, routes (may have bugs)
+-Working on views. Running into trouble with new init display,
+registering correctly? check mongoDB. 
+Not registering properly to mongo db, multiple data object fields are missing. 
+!req.body coming up empty.
+
+
+APP 10 START:
+work on initiatives.BROKE
+
+APP 9 SEALED AT:
+User Profile images working, displays properly.
+Started working on initiatives and broke everything, reverted and sealed.
+
+APP8 SEALED AT:
+User profile creation and editing mostly functional. 
+
+AS OF "APP7" - added map to display user profiles, with popup markup
+current problems:
+
+isMember middleware not working:
+    - runs but does not block joinGroup
+    problem with commands using mongo? .find somehow?
+
+
+
+
+- initiatives
+    Must be associated with a user, can also be associated with group
+    Date: single instance or duration? make both options
+
+- block users from joining groups twice 
+- separate user profile image and user image collections
+- make locations auto-capitalized
+- add geocoder search to maps (for place search)
+
+ONGOING:
+- make footer stick (always visible)
+- seeds for users? possible with auth?
+- map carousel: rotating photos must keep consistent height
+- initiatives - index, show, map
+- associate initiatives with users AND/OR groups
+- add an auto-generated 'region' attr to users/groups/initiatives based on location? 
+    >can this be done with mapbox gl?
+
+UPCOMING:
+- search and filter options
+- privacy settings
+- make usernames required to be unique, without case sensitivity
+
+
+COMPLETED:
+- image upload for users
+- user profile image upload
+- users edit profiles
+- geocoder updating on edit for users and groups.
+- users join groups
+- style user profile page
+- add map to user profile page
+- add map popup for users. 
+- added user routes, re-routed reg, login, logout
+- added new use profile fields
+- added edit form for users
+- added auth middleware to hide user-lists, deny edit form
+- fixed session redirect
+
+
+initiatives as own path, 
+created by users (one to many), push to user.initiatives
+optional group(s) association (many to many).
+(if clause, push to group.initiatives)
+
+
+
+What does the initial launch need to include?
+
+User profiles, group pages, and initiative pages
+
+Users can become members of group pages
+
+Users can become supporters of initiatives
+
+Users can create initiatives, stand-alone or through a group
+
+Search/explore groups
+
+Search/explore initiatives
+
+Search/expore user profiles
+
+Initiative and group notifications?
+
+PROBLEMS SOLVED:
+
+~~~PROBLEM:
+adding image upload to users, (WRONG, but still may be janky) the problem seems to be with
+declaration of "user" constant, where I have deconstructed all the variables.
+    join control seems to create full object 'user'
+~~~SOLUTION:
+Did not have "upload image array" in controller scripts
+~~~PROBLEM:
+groups/users membership only showing id numbers.
+user/group association, push for idtags is working, but not with username/title. look at req. results?
+~~~SOLUTION: 
+I was not "populating" on the show pages for groups and users, so the data objects could not load onto the page. 
+
+~~~PROBLEM:
+How do I create a map to display user profiles?
+Issue seems to be: usage of const = user, for passport, mapbox, and profile, how can it be shared or parsed out?
+to do:
+- edit PUT not working? update doesn't work. add in validateUser after?
+- UPDATE: PROBLEM IS WITH MAPPING (GEOCODER) fix registration result (cannot read property location of undefined?), seems to still register in database. 
+    - disabled mapping makes register auto-login with session-return. 
+~~~SOLUTION: 
+I was calling req.body.user.location and should have just been calling user.location, since user was already defined.
+The map wouldn't show up because I hadn't given it a minimum height/width in CSS stylesheet app.CSS
+
+~~~PROBLEM:
+user locations not showing on map
+~~~SOLUTION:
+Order problem in the users controllers file, I was tyring to register the user (triggering validation, saving user)
+before saving the user.geomtery. Moved the user.geometry line up above registration, problem solved. 
+
+~~~PROBLEM:
+SEALED AT: Registered users show up on map, but I cannot get popup text to show, I think it's because of old users in database without required attributes. 
+In App 8, will delete user list and start fresh. FIXED 
+~~~SOLUTION:
+Deleting old userbase worked. Old users did not have the required data for opts, or something.
+
+~~~PROBLEM
+edit not succesfully updating. was not recognizing 'user' object from form submission.
+~~~SOLUTION
+I did not have the form items named properly (i.e. location instead of the correct user[location])
+
+~~~PROBLEM
+geocoder not updating for user profile edit. also not updating for groups.
+~~~SOLUTION
+added appropriate code

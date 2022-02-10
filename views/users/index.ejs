@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate')%>
+
+    <h1 class="mb-5 text-center">Connect with Other Users</h1>
+    <div id="cluster-map-users">
+    </div>
+    <div>
+        <button class="m-1 mt-3 btn btn-dark">Filter</button>
+        <button class="m-1 mt-3 btn btn-secondary">Search</button>
+    </div>
+            <% for (let user of users) {%>
+                <div class="card mt-5 mb-3">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 mt-3 mb-3 p-4">
+                            <div class="row">
+                                <h5 class="card-title"><%= user.username  %> </h1>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <% if(user.images.length) { %> 
+                                   <img class="img-fluid" src="<%= user.images[0].url%>" alt=""> 
+                                    <% }else {%> 
+                                    <img class="img-fluid" src="" alt="">
+                                    <% } %> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 mt-3 mb-3">
+                            <p class="card-text"><b>Location: </b><%= user.location  %> </p>
+                            <p class="card-text"><b>Bio: </b><%= user.bio.substring(0,300) %></p>
+                            <p class="card-text"><b>Offering: </b><%= user.offerings  %> </p>
+                            <p class="card-text"><b>Needs: </b><%= user.needs  %> </p>
+                            <a href="/users/<%= user._id%>" class="btn btn-primary">View <%= user.username%>'s Profile</a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 mt-3 mb-3 p-4">
+                            <p class="card-text"><b>ID#: </b><%= user._id  %> </p>
+                            <p class="card-text"><b>Groups: </b><%= user.groups  %> </p>
+                            <p class="card-text"><b>Initiatives: </b><%= user.initiatives  %> </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>  
+
+
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const users = {features: <%- JSON.stringify(users) %>}
+</script>
+
+<script src="/javascripts/clusterMapUsers.js"></script>
+

@@ -1,0 +1,89 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-9 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                    alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">Register</h5>
+                    <form action="/users/<%= user._id%>?_method=PUT" method="POST" novalidate class="to-validate" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <!-- <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" name="username" required autofocus>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div> -->
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-control" type="email" id="email" name="user[email]" value="<%= user.email%>" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div> -->
+                            <div class="mb-3">
+                                <label class="form-label" for="location">Location</label>
+                                <input class="form-control" type="text" id="location" name="user[location]" value="<%= user.location%>" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Add image(s)!</label>
+                                    <input class="form-control" type="file" name="image" id="image" multiple>
+                                </div>
+                                <div class="valid-feedback">
+                                    Lookin' good handsome!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <% user.images.forEach(function(img, i) { %>
+                                    <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                                    <div class="form-check-inline">
+                                        <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value=<%=img.filename%>>
+                                    </div>
+                                    <label for="image-<%=i%>">Delete?</label>
+                                    <% })%> 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="bio">Bio</label>
+                                <textarea class="form-control" type="text-area" id="bio" name="user[bio]"><%= user.bio%></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div> 
+                            <div class="mb-3">
+                                <label class="form-label" for="offerings">Offerings</label>
+                                <textarea class="form-control" type="text-area" id="offerings" name="user[offerings]"><%= user.offerings%></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div> 
+                            <div class="mb-3">
+                                <label class="form-label" for="needs">Needs</label>
+                                <textarea class="form-control" type="text-area" id="needs" name="user[needs]"><%= user.needs%></textarea>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>     
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn-success">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

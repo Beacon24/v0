@@ -1,0 +1,68 @@
+<% layout('/layouts/boilerplate')%>
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Edit Group</h1>
+            <form action="/groups/<%= group._id%>?_method=PUT" method="POST" novalidate class="to-validate" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Name</label>
+                    <input class="form-control" type="text" id="title" name="group[title]" value="<%= group.title%>" required>
+                <div class="valid-feedback">
+                    Lookin' good handsome!
+                </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="group[location]" value="<%= group.location%>" required>
+                    <div class="valid-feedback">
+                        Lookin' good handsome!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Add image(s)!</label>
+                        <input class="form-control" type="file" name="image" id="image" multiple>
+                    </div>
+                    <div class="valid-feedback">
+                        Lookin' good handsome!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="group[description]" required><%= group.description%></textarea>
+                    <div class="valid-feedback">
+                        Lookin' good handsome!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="offerings">What do you have to offer or share?</label>
+                    <textarea class="form-control" type="text" id="offerings" name="group[offerings]"><%= group.offerings%> </textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="needs">What do you need, what assistance could you use?</label>
+                    <textarea class="form-control" type="text" id="needs" name="group[needs]"><%= group.needs %> </textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% group.images.forEach(function(img, i) { %>
+                        <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value=<%=img.filename%>>
+                        </div>
+                        <label for="image-<%=i%>">Delete?</label>
+                        <% })%> 
+                </div>
+                <div class="mb-3">
+                <button class="btn-success">Update group</button>
+                </div>
+            </form>
+            <footer>
+                <a href="/groups/<%= group._id%>">Back to group</a>
+                <a href="/groups/">Edit group</a>
+                <a href="/groups">All groups</a>
+            </footer>        
+        </div>
+    </footer>
