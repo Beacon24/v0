@@ -18,6 +18,8 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.createGroup = async (req, res, next) => {
     // if(!req.body.campground) throw new ExpressError('Invalid Group Data', 400);
+        console.log('!!!req.body');
+        console.log(req.body);
         const geoData = await geocoder.forwardGeocode({
             query: req.body.group.location,
             limit: 1
@@ -27,8 +29,7 @@ module.exports.createGroup = async (req, res, next) => {
         group.geometry = geoData.body.features[0].geometry;
         group.images = req.files.map(f => ({ url: f.path, filename: f.filename }))
         group.creator = req.user._id;
-        await group.save();
-        console.log(group);       
+        await group.save();     
         req.flash('success', 'You added a group to the database! Great job! OK!')
         res.redirect(`/groups/${group._id}`)
 }

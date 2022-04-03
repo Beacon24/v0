@@ -105,17 +105,17 @@ module.exports.updateUser = async (req, res) => {
 //     res.redirect(`/groups/${group._id}`);
 // }
 
-module.exports.createInitiative = async (req, res) => {
-    //if clause
-    const group = await Group.findById(req.params.id);
-    const initiative = new Initiative(req.body.initiative);
-    initiative.creator = req.user._id;
-    group.initiatives.push(initiative);
-    await initiative.save();
-    await group.save();
-    req.flash('success', 'YOU CREATED AN INITIATIVE!')
-    res.redirect(`/groups/${group._id}`);
-}
+// module.exports.createInitiative = async (req, res) => {
+//     //if clause
+//     const group = await Group.findById(req.params.id);
+//     const initiative = new Initiative(req.body.initiative);
+//     initiative.creator = req.user._id;
+//     group.initiatives.push(initiative);
+//     await initiative.save();
+//     await group.save();
+//     req.flash('success', 'YOU CREATED AN INITIATIVE!')
+//     res.redirect(`/groups/${group._id}`);
+// }
 
 
 

@@ -10,7 +10,7 @@ Not registering properly to mongo db, multiple data object fields are missing.
 
 
 APP 10 START:
-work on initiatives.BROKE
+work on initiatives.BROKE PROBLEM WAS URLENCODE/IMG UPLOAD
 
 APP 9 SEALED AT:
 User Profile images working, displays properly.
