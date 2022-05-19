@@ -26,7 +26,7 @@ const seedDB = async() => {
     for(let i = 0; i < 1000; i++){
         const random1000 = Math.floor(Math.random() * 1000);
         const total = new Group ({
-            //YOUR USER ID
+            //YOUR USER ID - can this be made into a variable? "test._id"?
             creator: '61fd57115b5d7f1d5290da10',
             title: `Ex Group ${i}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`, 

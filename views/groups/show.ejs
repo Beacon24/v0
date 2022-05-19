@@ -1,8 +1,8 @@
 <% layout('/layouts/boilerplate')%>
 
 <div class="row">
-    <div class="col-6">
-        <div id="groupCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="col-4">
+        <div id="groupCarousel" class="carousel slide my-5" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% group.images.forEach((img, i) => { %> 
             <div class="carousel-item <%=  i === 0 ? 'active' : ''%>">
@@ -21,6 +21,10 @@
           </button>
           <% } %> 
         </div>
+        <div class="" id='map'>
+        </div>
+    </div>
+    <div class="col-8">
         <div class="card mb-5">
           <h1 class="card-title m-3"><%= group.title%></h1>
             <div class="card-body">
@@ -61,40 +65,9 @@
         </div>
 
     </div>
-    <div class="col-6">
-    <div id='map'>
+    <div class="col-12">
+
     </div>
-    <% if(currentUser){ %> 
-      <h2>Launch an Initiative:</h2>
-      <form class="mb-3 to-validate" action="/groups/<%=group._id%>/initiatives" method="POST" novalidate>
-          <div class="mb-3">
-            <label class="form-label" for="description">Initiatives</label>
-            <textarea class="form-control" name="initiative[description]" id="body" cols="30" rows="3" required></textarea>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <button class="btn-success">
-            Submit
-          </button>
-      </form>
-      <div class="card mb-5"></div>
-      <% for(let initiative of group.initiatives) { %>
-      <div class="card mb-2">
-        <div class="card-body">
-          <p class="card-subtitle"><b>Author: </b><%= initiative.creator.username %></p>
-          <p class="card-text"><b>initiative: </b><%= initiative.description %></p>
-          <!-- <% if( currentUser && initiative.creator.equals(currentUser._id) ) { %>  -->
-          <form action="/groups/<%=group._id%>/initiatives/<%=initiative._id%>?_method=DELETE" method="POST">
-            <button class="btn-sm btn-danger">Delete</button>
-          </form>
-          <!-- <% } %>  -->
-        </div>
-      </div>
-      <% } %>
-    </div>
-    <% } %>
-  </div>
 </div>
 
 <script>

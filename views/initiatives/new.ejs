@@ -5,7 +5,7 @@
         <div class="col-md-6 offset-md-3">
             <div class="card shadow">
             <div class="card-body">
-            <form action="/initiatives" method="POST" class="to-validate" novalidate>
+            <form action="/initiatives" method="POST" class="to-validate" enctype="multipart/form-data" novalidate >
                 <div class="mb-3">
                     <label class="form-label" for="title">Name</label>
                     <input class="form-control" type="text" id="title" name="initiative[title]" required>
@@ -14,12 +14,12 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="summary">Summary</label>
-                    <input class="form-control" type="text" id="summary" name="initiative[summary]" required>
+                    <label class="form-label" for="summary">Summary - a brief preview description of what your initiative is</label>
+                    <textarea class="form-control" type="text" id="summary" name="initiative[summary]" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                </div>                
+                </div>            
                 <div class="mb-3">
                     <label class="form-label" for="location">Location</label>
                     <input class="form-control" type="text" id="location" name="initiative[location]" required>
@@ -28,39 +28,50 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="when">When</label>
-                    <textarea class="form-control" type="text" id="when" name="initiative[when]" required></textarea>
+                    <label class="form-label" for="time">Time</label>
+                    <textarea class="form-control" type="text" id="time" name="initiative[time]" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="summary">summary</label>
-                    <textarea class="form-control" type="text" id="summary" name="initiative[summary]" required></textarea>
+                    <label class="form-label" for="contact">How can initiative leadership be contacted? Eventually you will be able to message and discuss through Beacon's own encrypted channels. For now, let people know how best to reach you.</label>
+                    <textarea class="form-control" type="text" id="contact" name="initiative[contact]"></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="when">Description</label>
-                    <textarea class="form-control" type="text" id="description" name="initiative[description]" required></textarea>
+                    <label class="form-label" for="description">Describe the initiative in as much detail as you like.</label>
+                    <textarea class="form-control" type="text" id="description" name="initiative[description]"></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="offerings">What do you have to offer or share?</label>
+                    <label class="form-label" for="actions">What specific actions are being taken -is help being sought, or offered? Action items are concrete ways for current and new supporters to get involved.</label>
+                    <textarea class="form-control" type="text" id="actions" name="initiative[actions]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="offerings">Is anything being offered by this inititiative? Think in simple categories that could be easily searched.</label>
                     <textarea class="form-control" type="text" id="offerings" name="initiative[offerings]"></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="needs">What do you need, what assistance could you use?</label>
+                    <label class="form-label" for="needs">Is there anything this initiative needs? Think in simple categories that could be easily searched.</label>
                     <textarea class="form-control" type="text" id="needs" name="initiative[needs]"></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add image(s)!</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple>
                 </div>
                 <div class="mb-3">
                 <button class="btn-success">Add initiative</button>

@@ -1,2 +1,79 @@
 <% layout('/layouts/boilerplate')%>
-<h1>show init</h1>
+<div class="row">
+    <div class="col-12">
+        <div id="groupCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% initiative.images.forEach((img, i) => { %> 
+            <div class="carousel-item <%=  i === 0 ? 'active' : ''%>">
+              <img src="<%= img.url%> " class="d-block w-100" alt="">
+            </div>
+            <%  }) %> 
+          </div>
+          <% if(initiative.images.length > 1) { %> 
+          <button class="carousel-control-prev" type="button" data-bs-target="#groupCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#groupCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <% } %> 
+        </div>
+        <div class="card mb-5">
+          <h1 class="card-title m-3"><%= initiative.title%></h1>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"><b>Location: </b><%= initiative.location %></li>
+              <li class="list-group-item"><b>Summary: </b><%= initiative.summary %> 
+              <li class="list-group-item"><b>Led by: </b><%= initiative.creator.username %> 
+              <li class="list-group-item"><b>Time:</b> <%= initiative.time %></li>
+              <li class="list-group-item"><b>Description:</b> <%= initiative.description %></li>
+              <li class="list-group-item"><b>Actions:</b> <%= initiative.actions %></li>
+              <li class="list-group-item"><b>Offerings:</b> <%= initiative.offerings %></li>
+              <li class="list-group-item"><b>Needs:</b> <%= initiative.needs %></li>
+              <li class="list-group-item"><b>Get in Touch:</b> <%= initiative.contact %></li>
+            </ul>
+            <div class="card-body">
+              <p><b>Supporters:</b></p>
+              <% for(let supporter of initiative.supporters){ %>
+                <li class="list-group-item"><%= supporter.username%></li>
+              <% } %> 
+              <p><b>Associated Groups:</b></p>
+              <% for(let group of initiative.groups){ %>
+                <li class="list-group-item"><%= group.title%></li>
+              <% } %> 
+
+            </div>
+
+            <div class="card-body">
+              <% if( currentUser && initiative.creator.equals(currentUser._id) ) { %> 
+              <a href="/initiatives/<%= initiative._id%>/edit" class="card-link btn btn-info">Edit</a>
+              <form class="d-inline" action="/initiatives/<%= initiative._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+                </form>
+              <% } %>
+                <form class="d-inline" action="/initiatives/<%= initiative._id%>/join" method="POST">
+                  <button class="btn btn-danger">
+                      Join
+                  </button>
+                </form>
+            </div>
+
+            <a href="/initiatives" class="card-link btn btn-primary">Return to All</a>
+        </div>
+
+    </div>
+    <div class="col-12">
+    <div id='map'>
+    </div>
+    </div>
+</div>
+
+<script>
+  const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+  const initiative = <%-JSON.stringify(initiative)%> 
+</script>
+
+<script src="/javascripts/showPageMap.js"></script>

@@ -1,0 +1,11 @@
+<% layout('/layouts/boilerplate')%>
+<h1>EXPLORE</h1>
+<div id="cluster-map-explore">
+</div>
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const groups = {features: <%- JSON.stringify(groups) %>}
+</script>
+
+<script src="/javascripts/clusterMapExplore.js"></script>

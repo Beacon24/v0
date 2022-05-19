@@ -18,8 +18,6 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.createGroup = async (req, res, next) => {
     // if(!req.body.campground) throw new ExpressError('Invalid Group Data', 400);
-        console.log('!!!req.body');
-        console.log(req.body);
         const geoData = await geocoder.forwardGeocode({
             query: req.body.group.location,
             limit: 1
@@ -67,6 +65,7 @@ module.exports.renderEditForm = async (req, res) => {
     res.render('groups/edit', { group })
 }
 
+
 module.exports.updateGroup = async (req, res) => {
     const { id } = req.params;
     const group = await Group.findByIdAndUpdate(id, { ...req.body.group })
@@ -89,13 +88,6 @@ module.exports.updateGroup = async (req, res) => {
     res.redirect(`/groups/${group._id}`)
 }
 
-// const geoData = await geocoder.forwardGeocode({
-//     query: req.body.group.location,
-//     limit: 1
-// }).send()
-// geoData.body.features[0].geometry.coordinates
-
-// group.geometry = geoData.body.features[0].geometry;
 
 module.exports.deleteGroup = async (req, res) => {
     const { id } = req.params;
@@ -121,7 +113,7 @@ module.exports.joinGroup = async (req, res) => {
     req.flash('success', 'JOINED GROUP!');
     res.redirect(`/groups/${group._id}`);
 }
-
+//CHECK FIRST IF USER IS ALREADY IN GROUP
 // module.exports.createInitiative = async (req, res) => {
 //     //if clause
 //     const group = await Group.findById(req.params.id);

@@ -1,3 +1,6 @@
+
+
+
 APP 11 (copy of 9)
 Build out initiatives functioning.
 
@@ -29,23 +32,30 @@ isMember middleware not working:
 
 
 
-- initiatives
-    Must be associated with a user, can also be associated with group
+Initiatives
     Date: single instance or duration? make both options
 
-- block users from joining groups twice 
-- separate user profile image and user image collections
-- make locations auto-capitalized
-- add geocoder search to maps (for place search)
+
 
 ONGOING:
+
+- block users from joining groups twice 
+    Faster to check user's groups than check group's members. 
+    user.groups({$in: req.body.group}) or something similar. look at docs to get closer to answer. 
+
+
+
+- separate user profile image and user image collections -or- one image per user for now
+- make locations auto-capitalized (?)
+
 - make footer stick (always visible)
 - seeds for users? possible with auth?
 - map carousel: rotating photos must keep consistent height
-- initiatives - index, show, map
 - associate initiatives with users AND/OR groups
 - add an auto-generated 'region' attr to users/groups/initiatives based on location? 
     >can this be done with mapbox gl?
+- user/group locations: how to make real location secret and randomized/approx location visible? Also choice of "region/town only"
+    >look at geocoder for clues on implementation
 
 UPCOMING:
 - search and filter options

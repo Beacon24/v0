@@ -23,6 +23,7 @@ const morgan = require('morgan');
 const userRoutes = require('./routes/users')
 const groupRoutes = require('./routes/groups');
 const initiativeRoutes = require('./routes/initiatives')
+const exploreRoutes = require('./routes/explore')
 
 const { places, descriptors } = require('./seeds/seedHelpers');
 
@@ -88,6 +89,7 @@ app.use((req, res, next) => {
 app.use('/users', userRoutes)
 app.use('/groups', groupRoutes)
 app.use('/initiatives', initiativeRoutes)
+app.use('/explore', exploreRoutes)
 
 // app.use(morgan('tiny'));
 
@@ -108,6 +110,6 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(3000, () => {
-    console.log('SeRvInG oN pOrT 3000'.rainbow)
+    console.log('BEACON LIT ON PORT 3000'.rainbow)
 })
 

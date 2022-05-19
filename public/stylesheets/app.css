@@ -8,9 +8,25 @@
     height: 400px;
 }
 
+#cluster-map-explore {
+    width: 100%;
+    height: 600px;
+}
 
+#cluster-map-initiatives {
+    width: 100%;
+    height: 400px;
+}
 
 #map {
     width: 100%;
     height: 300px;
 }
+
+.carousel {
+    height: 300px;
+}
+
+/* .carousel-inner {
+    max-height: 400px !important;
+} */

@@ -61,14 +61,14 @@ GroupSchema.virtual('properties.popUpMarkup').get(function(){
     `;
 });
 
-GroupSchema.post('findOneAndDelete', async function (doc) {
-    if(doc){
-        await Initiative.remove({
-            _id: {
-                $in: doc.initiatives
-            }
-        })
-    }
-})
+// GroupSchema.post('findOneAndDelete', async function (doc) {
+//     if(doc){
+//         await Initiative.remove({
+//             _id: {
+//                 $in: doc.initiatives
+//             }
+//         })
+//     }
+// }) THIS MAY BE OLD FROM WHEN INITS WERE EXTENSIONS OF GROUPS
 
 module.exports = mongoose.model('Group', GroupSchema,);

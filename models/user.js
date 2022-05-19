@@ -33,6 +33,7 @@ const UserSchema = new Schema({
         }
     },
     location: String,
+    interests: String,
     offerings: String,
     needs: String,
     groups: [

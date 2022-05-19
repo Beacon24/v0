@@ -1,0 +1,75 @@
+look at find({}) in the controllers, thats where search may happen
+
+
+Add Scotlyn, Steven, Darby, Michael to listserv. Reach out to other friends to add. 
+To Do:
+Style:
+- map popups, add image?
+Initiatives:
+- make actions into an array, at least for display
+- update - bugs - add image map features to edit page/form
+- show page formatting
+    - actions, offerings, and needs in styled list (change input as well?)
+- make Time key searchable, plus TBD, ongoing options
+Explore:
+- update user and group models with final structure
+- explore page map (how to make all three on one map?)
+- add search/filter options
+- add geocoder search to maps (for place search - zoom to?)
+General:
+- Update GIThub
+- Create GIThub tickets for all remaining work items
+- create search
+    - search by name, keywords (index summary, description, actions, name), location, time
+- Show individual profile pages as popup over index
+- create alert on attempted duplicate joins for inits and groups (addToSet)
+
+Q on mapbox:
+I am using Mapbox GLJS to display and interact with three sets of data. I want to display point markers for the different data-sets (groups, users, and initiatives) all on the same map. 
+I would also like to be able to toggle each data-set on and off. 
+I am having trouble finding in the Mapbox docs how to add multiple data sources to a single map. Can anyone offer tips or guidance? On stack overflow I saw one person suggest adding multiple layers
+instead of multiple sources, but when I try to do that I can't figure out how to target the different data sets. 
+Can provide GIThub link if that will help.
+Thanks!
+
+How will search work?
+
+User sends a READ request through a form which sets and sends the query,
+    query (defined in controller) returns findMany() results according to form inputs
+
+
+Offerings/Needs 
+
+    Change to "Assistance Needed/Assistance Offered"?
+    key:value pairs 
+    Should these be pre-set checkbox categories? 
+        Transportation
+        Food
+        Education
+        Skilled Assistance
+            - Manual Labor
+            - Organization
+            - Legal
+            - Financial
+            - Mechanics
+            - Home maintenance
+            - Garden/Farm
+        Childcare
+        Petcare
+
+    Should Init model have needs/offerings?
+
+    Make it so "support for X initiative" can be listed under needs for groups/users
+
+
+
+
+Snippets:
+
+            <div class="col-md-4">
+                <% if(user.images.length) { %> 
+               <img class="img-fluid" src="<%= user.images[0].url%>" alt=""> 
+                <% }else {%> 
+                <img class="img-fluid" src="" alt="">
+                <% } %> 
+            </div>
