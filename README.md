@@ -3,8 +3,9 @@
 # A not-for-profit social network devoted to community, connection and action. Social media prioritizes content and capturing user attention. Beacon prioritizes the network, with meaningful interaction that translates to real world impact. Check out our website, www.thebeaconnetwork.org
 
 ## How to Use
-App uses Node and NPM. 
-Install with npm init -y
+App uses Node
+- Install with 'npm install'
+- Run with 'nodemon index.js'
 Run from command line with node or nodemon
 View through web browser at localhost:3000
 
