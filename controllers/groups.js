@@ -130,3 +130,10 @@ module.exports.renderLogin = (req, res) => {
     res.render('users/login')
 }
 
+
+// SEARCH DRAFTS
+// module.exports.groupSearch = async (req, res) => {
+//     const groups = await Group.find({
+//         title: {$in: searchQuery.title}
+//     })
+// }

@@ -1,7 +1,7 @@
 
     <% layout('/layouts/boilerplate')%>
     <h1 class="mb-5 text-center">Welcome to Beacon! Find groups with common interests and goals!</h1>
-    <div id="cluster-map">
+    <div id="cluster-map-groups">
     </div>
     <div>
         <a href="groups/new"><button class="m-1 mt-3 btn btn-primary">Add a group</button></a>
@@ -40,4 +40,4 @@
         const groups = {features: <%- JSON.stringify(groups) %>}
     </script>
 
-    <script src="/javascripts/clusterMap.js"></script>
+    <script src="/javascripts/clusterMapGroups.js"></script>
