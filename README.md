@@ -3,10 +3,17 @@
 # A not-for-profit social network devoted to community, connection and action. Social media prioritizes content and capturing user attention. Beacon prioritizes the network, with meaningful interaction that translates to real world impact. Check out our website, www.thebeaconnetwork.org
 
 ## How to Use
-App uses Node
+App uses Node and Mongo, must be running MongoDB server in background.
+###Mongo Instructions:
+- Docs for installing MongoDB can be found at:
+    https://www.mongodb.com/docs/manual/administration/install-community/
+- Once installed, run `mongod` through the command line to start up the MongoDB server.
+Mac-specific issues might be resolved here:
+https://stackoverflow.com/a/58297378/3124493
+###Running the App:
 - Install with 'npm install'
-- Run with 'nodemon index.js'
-Run from command line with node or nodemon
+- Run with `node index.js` in app directory, or 'nodemon index.js', for continuous program reset when saving changes to code.
+
 View through web browser at localhost:3000
 
 ## Built With 
