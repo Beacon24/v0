@@ -3,9 +3,13 @@ look at find({}) in the controllers, thats where search may happen
 
 Add Scotlyn, Steven, Darby, Michael to listserv. Reach out to other friends to add. 
 To Do:
+Deployment:
+- Review steps for deployment
+- Consider options for deployment, heroku etc
 Style:
 - map popups, add image?
 Initiatives:
+- bug on init show page, "cast to objectid failed"
 - make actions into an array, at least for display
 - update - bugs - add image map features to edit page/form
 - show page formatting
@@ -22,6 +26,12 @@ General:
     - search by name, keywords (index summary, description, actions, name), location, time
 - Show individual profile pages as popup over index
 - create alert on attempted duplicate joins for inits and groups (addToSet)
+
+
+CURRENT BUGS/CHALLENGES
+- bug on init show page, "cast to objectid failed"
+    for some reason the username value "test" is being fed to mongo as an id
+    for the user when I try to call for the supporters of the inititaive.
 
 
 How will search work?

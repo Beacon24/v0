@@ -47,7 +47,21 @@ module.exports.login = (req, res) => {
 }
 
 module.exports.index = async (req, res) => {
-    const users = await User.find({});
+    const users = await User.find({})
+    .populate({
+        path: 'groups',
+        populate: {
+            path: 'group',
+            populate: 'title'
+        }
+    })
+    .populate({
+        path: 'initiatives',
+        populate: {
+            path: 'initiative',
+            populate: 'title'
+        }
+    });
     res.render('users/index', { users })
 }
 
@@ -57,6 +71,12 @@ module.exports.showUser = async (req, res) => {
         path: 'groups',
         populate: {
             path: 'group'
+        }
+    })
+    .populate({
+        path: 'initiatives',
+        populate: {
+            path: 'initiative'
         }
     });
     res.render('users/show', { user })

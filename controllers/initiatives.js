@@ -27,6 +27,7 @@ module.exports.createInitiative = async (req, res, next) => {
     initiative.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     initiative.creator = req.user._id;
     initiative.leaders.push(req.user_id)
+    initiative.supporters.push(req.user_id)
     await initiative.save();
     req.flash('success', 'YOU CREATED AN INITIATIVE!')
     res.redirect(`/initiatives/${initiative._id}`);
@@ -34,17 +35,17 @@ module.exports.createInitiative = async (req, res, next) => {
 
 module.exports.showInitiative = async (req, res) => {
     const initiative = await Initiative.findById(req.params.id)
-    // .populate({
-    //     path:'groups',
-    //     populate: {
-    //         path: 'title'
-    //     }
-    // })
+    .populate({
+        path:'groups',
+        populate: {
+            path: 'title'
+        }
+    })
     .populate('creator')
     .populate({
         path: 'supporters',
         populate: {
-            path: 'user'
+            path: 'username'
         }
     });
     if(!initiative){

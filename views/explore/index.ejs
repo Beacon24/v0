@@ -2,10 +2,17 @@
 <h1>EXPLORE</h1>
 <div id="cluster-map-explore">
 </div>
+<div>
+    <form action="/explore" method="GET" novalidate>
+        <input type="text" id="keywords">
+        <button>Submit</button>
+    </form>
+
+</div>
 
 <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const groups = {features: <%- JSON.stringify(groups) %>}
+    // const groups = {features: <%- JSON.stringify(groups) %>}
 </script>
 
 <script src="/javascripts/clusterMapExplore.js"></script>

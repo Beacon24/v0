@@ -50,7 +50,12 @@
               <% for(let group of user.groups){ %>
                 <li class="list-group-item"><%= group.title%></li>
               <% } %> 
-
+            </div>
+            <div class="card-body">            
+              <p><b>Initiatives:</b></p>
+              <% for(let initiative of user.initiatives){ %>
+                <li class="list-group-item"><%= initiative.title%></li>
+              <% } %> 
             </div>
             <div class="card-body">
             <a href="/users/<%= user._id  %>/edit" class="card-link btn btn-primary p-2">Edit User Profile</a>

@@ -16,5 +16,6 @@ const { groupSchema } = require('../schemas.js');
 
 router.route('/') 
     .get(catchAsync(explore.index))
+    .get(catchAsync(explore.search))
 
 module.exports = router;

@@ -33,17 +33,7 @@
               <li class="list-group-item"><b>Needs:</b> <%= initiative.needs %></li>
               <li class="list-group-item"><b>Get in Touch:</b> <%= initiative.contact %></li>
             </ul>
-            <div class="card-body">
-              <p><b>Supporters:</b></p>
-              <% for(let supporter of initiative.supporters){ %>
-                <li class="list-group-item"><%= supporter.username%></li>
-              <% } %> 
-              <p><b>Associated Groups:</b></p>
-              <% for(let group of initiative.groups){ %>
-                <li class="list-group-item"><%= group.title%></li>
-              <% } %> 
 
-            </div>
 
             <div class="card-body">
               <% if( currentUser && initiative.creator.equals(currentUser._id) ) { %> 
