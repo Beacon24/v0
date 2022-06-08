@@ -97,3 +97,6 @@ Snippets:
                 <img class="img-fluid" src="" alt="">
                 <% } %> 
             </div>
+
+
+Longterm: Calendar synch

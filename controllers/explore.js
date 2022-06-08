@@ -20,7 +20,7 @@ module.exports.search = async (req, res) => {
     console.log(keywords)
     const groups = await Group.find({$or: [{title: keywords}, {description: keywords}]})
     //something here to conditionally run $and/$or search?
-    const initiatives = await Initative.find({$or: [{title: keywords}, {description: keywords}, {summary: keywords}]})    
+    const initiatives = await Initiative.find({$or: [{title: keywords}, {description: keywords}, {summary: keywords}]})    
     const users = await User.find({bio: keywords})
     res.render('explore/results', { groups, initiatives, users })
 }
