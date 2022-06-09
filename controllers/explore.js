@@ -15,6 +15,7 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.search = async (req, res) => {
+    console.log("req.params")
     console.log(req.params)
     const keywords = req.params
     console.log(keywords)

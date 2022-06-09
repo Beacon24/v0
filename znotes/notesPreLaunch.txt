@@ -9,7 +9,7 @@ Deployment:
 Style:
 - map popups, add image?
 Initiatives:
-- bug on init show page, "cast to objectid failed"
+- bug on init show page, Cast to string failed for value "{}" at path "description" for model "Group"
 - make actions into an array, at least for display
 - update - bugs - add image map features to edit page/form
 - show page formatting
@@ -29,9 +29,8 @@ General:
 
 
 CURRENT BUGS/CHALLENGES
-- bug on init show page, "cast to objectid failed"
-    for some reason the username value "test" is being fed to mongo as an id
-    for the user when I try to call for the supporters of the inititaive.
+- bug on init show page, Cast to string failed for value "{}" at path "description" for model "Group"
+
 
 
 How will search work?
