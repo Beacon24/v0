@@ -26,8 +26,8 @@ module.exports.createInitiative = async (req, res, next) => {
     initiative.geometry = geoData.body.features[0].geometry;
     initiative.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
     initiative.creator = req.user._id;
-    initiative.leaders.push(req.user_id)
-    initiative.supporters.push(req.user_id)
+    initiative.leaders.push(req.user._id)
+    initiative.supporters.push(req.user._id)
     await initiative.save();
     req.flash('success', 'YOU CREATED AN INITIATIVE!')
     res.redirect(`/initiatives/${initiative._id}`);
@@ -41,7 +41,12 @@ module.exports.showInitiative = async (req, res) => {
             path: 'title'
         }
     })
-    .populate('creator')
+    .populate({
+        path: 'creator',
+        populate: {
+            path: 'username'
+        }
+    })
     .populate({
         path: 'supporters',
         populate: {
