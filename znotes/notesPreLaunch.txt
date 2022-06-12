@@ -1,6 +1,12 @@
 look at find({}) in the controllers, thats where search may happen
 
 
+Init error:
+supporters not defined yet? 
+MAPBOX ERROR
+Problem was with clust id redundant names in js file. 
+
+
 Add Scotlyn, Steven, Darby, Michael to listserv. Reach out to other friends to add. 
 To Do:
 Deployment:

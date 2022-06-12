@@ -12,7 +12,8 @@
 
 <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    // const groups = {features: <%- JSON.stringify(groups) %>}
+    const groups = {features: <%- JSON.stringify(groups) %>}
+    const users = {features: <%- JSON.stringify(users) %>}
 </script>
 
 <script src="/javascripts/clusterMapExplore.js"></script>

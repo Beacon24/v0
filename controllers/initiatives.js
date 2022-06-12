@@ -34,6 +34,8 @@ module.exports.createInitiative = async (req, res, next) => {
 }
 
 module.exports.showInitiative = async (req, res) => {
+    console.log("~~~~~")
+    console.log(req.params)
     const initiative = await Initiative.findById(req.params.id)
     .populate({
         path:'groups',
@@ -42,16 +44,20 @@ module.exports.showInitiative = async (req, res) => {
         }
     })
     .populate('creator')
-    .populate({
-        path: 'supporters',
-        populate: {
-            path: 'username'
-        }
-    });
+    // .populate({
+    //     path: 'supporters',
+    //     populate: {
+    //         path: 'username'
+    //     }
+    // });
+    console.log('!!!!!!')
+    console.log(initiative)
     if(!initiative){
         req.flash('error', 'Initiative not found.');
         return res.redirect('/initiatives')
     }
+    console.log('!!!')
+    console.log(initiative)
     res.render('initiatives/show', { initiative })
 }
 

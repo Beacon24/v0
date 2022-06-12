@@ -6,7 +6,7 @@ const map = new mapboxgl.Map({
     center: [-103.5917, 40.6699],
     zoom: 3
 });
-
+console.log('!!!?!!', users)
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
  
 map.on('load', () => {
@@ -90,9 +90,9 @@ map.addSource('users', {
     clusterMaxZoom: 14, // Max zoom to cluster points on
     clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
 });
-
+console.log('!!!!!', users)
 map.addLayer({
-    id: 'clusters',
+    id: 'users-clusters',
     type: 'circle',
     source: 'users',
     filter: ['has', 'point_count'],
@@ -124,7 +124,7 @@ map.addLayer({
 });
  
 map.addLayer({
-    id: 'cluster-count',
+    id: 'users-cluster-count',
     type: 'symbol',
     source: 'users',
     filter: ['has', 'point_count'],
@@ -136,7 +136,7 @@ map.addLayer({
 });
  
 map.addLayer({
-    id: 'unclustered-point',
+    id: 'users-unclustered-point',
     type: 'circle',
     source: 'users',
     filter: ['!', ['has', 'point_count']],
@@ -168,17 +168,17 @@ map.getSource('groups').getClusterExpansionZoom(
 );
 
 
-map.getSource('users').getClusterExpansionZoom(
-    clusterId,
-    (err, zoom) => {
-        if (err) return;
+// map.getSource('users').getClusterExpansionZoom(
+//     clusterId,
+//     (err, zoom) => {
+//         if (err) return;
         
-        map.easeTo({
-            center: features[0].geometry.coordinates,
-            zoom: zoom
-        });
-    }
-);
+//         map.easeTo({
+//             center: features[0].geometry.coordinates,
+//             zoom: zoom
+//         });
+//     }
+// );
 });
  
 // When a click event occurs on a feature in
