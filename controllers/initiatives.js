@@ -41,12 +41,7 @@ module.exports.showInitiative = async (req, res) => {
             path: 'title'
         }
     })
-    .populate({
-        path: 'creator',
-        populate: {
-            path: 'username'
-        }
-    })
+    .populate('creator')
     .populate({
         path: 'supporters',
         populate: {
