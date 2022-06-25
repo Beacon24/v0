@@ -1,3 +1,12 @@
+Heroku:
+
+git remote -v (creates the space/domain - not for updating?)
+git add .
+git commit -m "ready to attempt deploy"
+git push heroku main   
+    (this was taught as master, why difference? does it matter?)
+will then run install to heroku
+
 Mongo Basic Commands:
 
     show dbs.

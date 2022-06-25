@@ -1,10 +1,11 @@
 {
-  "name": "Beacon",
+  "name": "beacon",
   "version": "0.2",
   "description": "Pre-beta launch, waiting to update and deploy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
