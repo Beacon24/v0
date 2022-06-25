@@ -2,6 +2,8 @@ if(process.env.NODE_ENV !== "production"){
     require('dotenv').config();
 }
 
+
+
 const colors = require('colors');
 const express = require('express');
 const path = require('path');
@@ -20,6 +22,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 
 const morgan = require('morgan');
 
+const MongoDBStore = require("connect-mongo")(session);
+
 const userRoutes = require('./routes/users')
 const groupRoutes = require('./routes/groups');
 const initiativeRoutes = require('./routes/initiatives')
@@ -27,8 +31,11 @@ const exploreRoutes = require('./routes/explore')
 
 const { places, descriptors } = require('./seeds/seedHelpers');
 
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/beacon';
+// 'mongodb://localhost:27017/beacon'
+// process.env.DB_URL
 
-mongoose.connect('mongodb://localhost:27017/beacon', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true
 });
@@ -52,8 +59,21 @@ app.use(mongoSanitize({
     replaceWith: '_'
 }));
 
+const secret = process.env.SECRET || 'badsecret'
+
+const store = new MongoDBStore({
+    url: dbUrl,
+    secret,
+    touchAfter: 24 * 60 * 60
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
+
 const sessionConfig = {
-    secret: 'badsecret',
+    store,
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -62,6 +82,7 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 *24 * 7
     }
 }
+
 app.use(session(sessionConfig))
 app.use(flash())
 

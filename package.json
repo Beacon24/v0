@@ -1,7 +1,7 @@
 {
-  "name": "YelpCamp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Beacon",
+  "version": "0.2",
+  "description": "Pre-beta launch, waiting to update and deploy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,7 @@
     "cloudinary": "^1.27.1",
     "colors": "^1.4.0",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.1.2",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",

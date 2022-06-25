@@ -1,19 +1,26 @@
 look at find({}) in the controllers, thats where search may happen
-
-
+age restrictions?
+add full name to user profiles? as opposed to username?
 Init error:
 supporters not defined yet? 
 MAPBOX ERROR
 Problem was with clust id redundant names in js file. 
 
+Question: How do I use Mongo CLI with online (atlas?) remote dbs?
+
 
 Add Scotlyn, Steven, Darby, Michael to listserv. Reach out to other friends to add. 
 To Do:
+Icons?
 Deployment:
 - Review steps for deployment
 - Consider options for deployment, heroku etc
+- better secrets for sessions? make env variables?
+Security:
+- Add join-group aproval. 
 Style:
 - map popups, add image?
+- move group member lists to separate page? hide to non-members. 
 Initiatives:
 - bug on init show page, "cast to objectid failed"
 - make actions into an array, at least for display

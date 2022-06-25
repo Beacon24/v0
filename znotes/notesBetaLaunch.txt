@@ -1,0 +1,17 @@
+Alert all beta testers that their info will be visible to other testers, and ONLY other testers. 
+Disclaimer that full security measures have not yet been implemented, but likelihood of any penetration/attack is low. 
+Any trouble at all email me directly
+Let users know security is low, we are working on privacy features like ask-for-approval to join groups
+
+~~~*~~~Bugs/Upgrades/Details~~~*~~~
+
+~~Errors:
+
+When user tries to login to non-existant account, appropriate error message
+When user tries to login with incorrect password, appropriate error message
+
+~~Upgrades:
+
+- Upgrade mongoose?
+- connect-mongo, had to downgrade to v 3.1.2 to avoid bug, how to upgrade?
+
