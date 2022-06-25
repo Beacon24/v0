@@ -5,6 +5,11 @@ Let users know security is low, we are working on privacy features like ask-for-
 
 ~~~*~~~Bugs/Upgrades/Details~~~*~~~
 
+~~Security:
+Make sure user map points don't show on explore map unless someone is logged in.
+    alt: don't show explore page unless account made
+Make opt-in/out for visible user profiles
+
 ~~Errors:
 
 When user tries to login to non-existant account, appropriate error message

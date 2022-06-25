@@ -4,10 +4,15 @@
     <div class="row">
         <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
             <div class="card shadow">
-                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                <img src="../images/BeaconLogo1.png"
                     alt="" class="card-img-top" />
                 <div class="card-body">
                     <h5 class="card-title">Register</h5>
+                    <p>While the password creation and maintenance for this username will be secure, this page still is not, 
+                        so <b>do not use a real password you use for any other accounts</b>, or put up any personal info you don't 
+                        want out there on the world wide web! This will be fixed before beta launches!</p>
+                        <p><b>DO NOT USE A REAL PASSWORD!</b></p>
+                        <p>Thanks for helping me test at this early stage! I'm sure you'll find plenty of bugs along the way!</p>
                     <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
                         <div class="mb-3">
                             <label class="form-label" for="username">Username</label>
@@ -48,7 +53,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Add image(s)!</label>
+                                <label for="image" class="form-label">Add image(s)</label>
                                 <input class="form-control" type="file" name="image" id="image" multiple>
                             </div>
                             <div class="mb-3">
