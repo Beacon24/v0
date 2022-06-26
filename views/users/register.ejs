@@ -15,10 +15,17 @@
                         <p>Thanks for helping me test at this early stage! I'm sure you'll find plenty of bugs along the way!</p>
                     <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
                         <div class="mb-3">
-                            <label class="form-label" for="username">Username</label>
+                            <label class="form-label" for="username">Username - use this to login</label>
                             <input class="form-control" type="text" id="username" name="username" required autofocus>
                             <div class="valid-feedback">
                                 Looks good!
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Name - this will be displayed to other users</label>
+                                <input class="form-control" type="name" id="name" name="name" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="email">Email</label>

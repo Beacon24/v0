@@ -14,6 +14,7 @@ ImageSchema.virtual('thumbnail').get(function(){
 const opts = { toJSON: { virtuals: true } };
 
 const UserSchema = new Schema({
+    name: String,
     email: {
         type: String,
         required: true,
