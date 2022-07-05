@@ -4,7 +4,7 @@ git remote -v (creates the space/domain - not for updating?)
 git add .
 git commit -m "ready to attempt deploy"
 git push heroku main   
-    (this was taught as master, why difference? does it matter?)
+    (this was taught as master, why difference? does it matter?)(I think its just to avoid using word master, common git syntax)
 will then run install to heroku
 
 Mongo Basic Commands:
