@@ -3,6 +3,8 @@ Disclaimer that full security measures have not yet been implemented, but likeli
 Any trouble at all email me directly
 Let users know security is low, we are working on privacy features like ask-for-approval to join groups
 
+MAKE DATA READY FOR SEARCH FUNCTION ADDITION 
+
 Why is it so slow?
 
 Questions to ask users:
