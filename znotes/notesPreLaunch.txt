@@ -35,7 +35,6 @@ Initiatives:
 - make Time key searchable, plus TBD, ongoing options
 Explore:
 - update user and group models with final structure
-- explore page map (how to make all three on one map?)
 - add search/filter options
 - add geocoder search to maps (for place search - zoom to?)
 General:
@@ -44,6 +43,7 @@ General:
     - search by name, keywords (index summary, description, actions, name), location, time
 - Show individual profile pages as popup over index
 - create alert on attempted duplicate joins for inits and groups (addToSet)
+- add small maps to show pages for inits and users
 
 
 CURRENT BUGS/CHALLENGES
