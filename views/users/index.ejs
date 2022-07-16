@@ -34,10 +34,10 @@
                         </div>
                         <div class="col-md-4 col-sm-4 mt-3 mb-3 p-4">
                             <p class="card-text"><b>Groups: </b><% for(let group of user.groups){ %>
-                                <li class="list-group-item"><%= group.title%></li>
+                                <li class="list-group-item"><a href="/groups/<%= group.id%>"><%= group.title%></a></li>
                               <% } %></p>
                             <p class="card-text"><b>Initiatives: </b><% for(let initiative of user.initiatives){ %>
-                                <li class="list-group-item"><%= initiative.title%></li>
+                                <li class="list-group-item"><a href="/initiatives/<%= initiative.id%>"><%= initiative.title%></a></li>
                               <% } %> </p>
                         </div>
                     </div>

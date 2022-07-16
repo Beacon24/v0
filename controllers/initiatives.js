@@ -42,12 +42,13 @@ module.exports.showInitiative = async (req, res) => {
         }
     })
     .populate('creator')
-    // .populate({
-    //     path: 'supporters',
-    //     populate: {
-    //         path: 'username'
-    //     }
-    // });
+    .populate({
+        path: 'supporters',
+        populate: {
+            path: 'supporter',
+            populate: 'name'
+        }
+    });
     if(!initiative){
         req.flash('error', 'Initiative not found.');
         return res.redirect('/initiatives')

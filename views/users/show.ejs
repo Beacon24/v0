@@ -25,7 +25,7 @@
       </div>
       <div class="col-8">
         <div class="card mb-5">
-          <h1 class="card-title m-3"><%= user.username  %>'s Profile Page!</h1>
+          <h3 class="card-title m-3"><%= user.username  %>'s Profile Page!</h3>
           <div class="row">
             <!-- <div class="col-md-4">
                 <% if(user.images.length) { %> 
@@ -36,8 +36,8 @@
             </div> -->
           </div>
             <div class="card-body">
-              <p class="card-text"><%= user.name%></p>
-              <p class="card-text"><%= user.bio%></p>
+              <p class="card-text"><strong>Name:</strong> <%= user.name%></p>
+              <p class="card-text"><strong>Bio:</strong> <%= user.bio%></p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-muted"><b>Location: </b><%= user.location %></li>
@@ -49,13 +49,13 @@
               <!-- do i need to do a for let statement here? -->
               <p><b>Groups:</b></p>
               <% for(let group of user.groups){ %>
-                <li class="list-group-item"><%= group.title%></li>
+                <li class="list-group-item"><a href="/groups/<%= group.id%>"><%= group.title%></a></li>
               <% } %> 
             </div>
             <div class="card-body">            
               <p><b>Initiatives:</b></p>
               <% for(let initiative of user.initiatives){ %>
-                <li class="list-group-item"><%= initiative.title%></li>
+                <li class="list-group-item"><a href="/initiatives/<%= initiative.id%>"><%= initiative.title%></a></li>
               <% } %> 
             </div>
             <div class="card-body">
