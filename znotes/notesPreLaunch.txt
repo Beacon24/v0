@@ -64,6 +64,7 @@ General:
 - Show individual profile pages as popup over index
 - create alert on attempted duplicate joins for inits and groups (addToSet)
 - add small maps to show pages for inits and users
+- registration flow, make account and then profile?
 
 
 CURRENT BUGS/CHALLENGES

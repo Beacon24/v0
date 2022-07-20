@@ -30,7 +30,7 @@
                             <p class="card-text"><b>Bio: </b><%= user.bio.substring(0,300) %></p>
                             <p class="card-text"><b>Offering: </b><%= user.offerings  %> </p>
                             <p class="card-text"><b>Needs: </b><%= user.needs  %> </p>
-                            <a href="/users/<%= user._id%>" class="btn btn-primary">View <%= user.username%>'s Profile</a>
+                            <a href="/users/<%= user._id%>" class="btn btn-primary">View <%= user.name%>'s Profile</a>
                         </div>
                         <div class="col-md-4 col-sm-4 mt-3 mb-3 p-4">
                             <p class="card-text"><b>Groups: </b><% for(let group of user.groups){ %>

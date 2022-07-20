@@ -37,6 +37,8 @@ Permission to support initiatives?
 How do we make groups "private?"
 
 ~~Errors:
+"Cannot read properties of undefined (reading 'map')
+    at module.exports.updateInitiative (/home/jared/Beacon/Beacon 0.21/controllers/initiatives.js:72:28)"
 Back to previous page button on error page?
 Initiative edit bug, problem with .map ?
 Switch username to use name in user profiles, group members, initiative supporters

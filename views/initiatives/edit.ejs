@@ -66,6 +66,24 @@
                     </div>
                 </div>
                 <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Add image(s)!</label>
+                        <input class="form-control" type="file" name="image" id="image" multiple>
+                    </div>
+                    <div class="valid-feedback">
+                        Lookin' good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% initiative.images.forEach(function(img, i) { %>
+                        <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value=<%=img.filename%>>
+                        </div>
+                        <label for="image-<%=i%>">Delete?</label>
+                        <% })%> 
+                </div>
+                <div class="mb-3">
                 <button class="btn-success">Update Initiative</button>
                 </div>
             </form>
