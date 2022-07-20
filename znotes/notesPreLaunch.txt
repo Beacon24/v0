@@ -22,8 +22,14 @@ Security:
 - Add join-group, support init, view group, view init aproval.
 
 Style:
+- user profile edit page, form is narrow collumn
 - map popups, add image?
 - move group member lists to separate page? hide to non-members. 
+- problem with overlapping cluster circles on maps
+
+Functionality:
+- ask 'are you sure' with deletion
+- make way for inits and groups to be associated, plus groups and groups
 
 Users:
 - Active user profile page? - button in users index - show in Navbar?
@@ -32,6 +38,7 @@ Users:
 
 Initiatives:
 - restrict view of supporters
+- show location like groups pages
 - show page image is goofy in layout, bleeds through to bottom below text
 - make actions into an array, at least for display
 - update - bugs - add image map features to edit page/form
@@ -43,7 +50,8 @@ Initiatives:
 Groups: 
 - make members into links - must be logged in
 
-Explore:
+Explore:'
+- make all locations into links - how? where do links go?
 - update user and group models with final structure
 - add search/filter options
 - add geocoder search to maps (for place search - zoom to?)

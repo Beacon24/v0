@@ -29,9 +29,12 @@ router.route('/index', isLoggedIn)
 
 router.route('/:id')
     .get(isLoggedIn, catchAsync(users.showUser))
+    .get(isLoggedIn, catchAsync(users.currentUser))
     .put(isLoggedIn, isUser, upload.array('image'), catchAsync(users.updateUser))
     .delete(isLoggedIn, isUser, catchAsync(users.deleteUser))
 
 router.get('/:id/edit', isLoggedIn, isUser, catchAsync(users.renderEditForm))
+
+
 
 module.exports = router; 

@@ -4,38 +4,38 @@
     <div class="row">
         <div class="col-md-8 offset-md-2 col-xl-6 offset-xl-3">
             <div class="card shadow">
+                <div class="card-body">
+                    <h1 class="card-title text-center mt-3">Thanks for Signing Up!</h1>
+                </div>
                 <img src="../images/BeaconLogo1.png"
                     alt="" class="card-img-top" />
                 <div class="card-body">
                     <h5 class="card-title">Register</h5>
-                    <p>While the password creation and maintenance for this username will be secure, this page still is not, 
-                        so <b>do not use a real password you use for any other accounts</b>, or put up any personal info you don't 
-                        want out there on the world wide web! This will be fixed before beta launches!</p>
-                        <p><b>DO NOT USE A REAL PASSWORD!</b></p>
-                        <p>Thanks for helping me test at this early stage! I'm sure you'll find plenty of bugs along the way!</p>
-                    <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
+                        <p>Thanks for helping us test the app at this early stage! Create an account to join and support group and initiative pages. Once you're logged in, explore groups and initiatives, and find other users, through the navigation bar above.!</p>
+                        <p>This is all just for testing purposes. Feel free to create pages for real groups or causes you represent, or to just make up pages for fun, but understand that all of the data you provide may be lost before version 1 launches. So don't get attached to anything you do here just yet!</p>
+                        <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
                         <div class="mb-3">
-                            <label class="form-label" for="username">Username - use this to login - must be unique</label>
+                            <label class="form-label" for="username"><b>Username</b> - use this to login - must be unique</label>
                             <input class="form-control" type="text" id="username" name="username" required autofocus>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="email">Name - this will be displayed to other users</label>
+                                <label class="form-label" for="email"><b>Name</b> - this will be displayed to other users</label>
                                 <input class="form-control" type="name" id="name" name="name" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="email">Email</label>
+                                <label class="form-label" for="email"><b>Email</b></label>
                                 <input class="form-control" type="email" id="email" name="email" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="password">Password</label>
+                                <label class="form-label" for="password"><b>Password</b></label>
                                 <input class="form-control" type="password" id="password" name="password" required>
                                 <div class="valid-feedback">
                                     Looks good!
@@ -46,39 +46,39 @@
                                 <input class="form-control" type="file" name="image" id="image" multiple>
                             </div> -->
                             <div class="mb-3">
-                                <label class="form-label" for="location">Location</label>
+                                <label class="form-label" for="location"><b>Location</b> - be as specific or general as you wish</label>
                                 <input class="form-control" type="text" id="location" name="location" required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="bio">Bio</label>
+                                <label class="form-label" for="bio"><b>Bio</b> - what do you want other users to know about you?</label>
                                 <textarea class="form-control" type="text-area" id="bio" name="bio"></textarea>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Add image(s)</label>
+                                <label for="image" class="form-label"><b>Add image(s)</b> - at least one picture of yourself goes a long way to making the internet into a more human place!</label>
                                 <input class="form-control" type="file" name="image" id="image" multiple>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="offerings">Interests</label>
+                                <label class="form-label" for="offerings"><b>Interests</b> - what do you want to connect with others about?</label>
                                 <textarea class="form-control" type="text-area" id="interests" name="interests"></textarea>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>   
                             <div class="mb-3">
-                                <label class="form-label" for="offerings">Offerings</label>
+                                <label class="form-label" for="offerings"><b>Offerings</b> - is there anything you would like to offer your communities and connections?</label>
                                 <textarea class="form-control" type="text-area" id="offerings" name="offerings"></textarea>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
                             </div>    
                             <div class="mb-3">
-                                <label class="form-label" for="needs">Needs</label>
+                                <label class="form-label" for="needs"><b>Needs</b> - how can your communities and connections support you?</label>
                                 <textarea class="form-control" type="text-area" id="needs" name="needs"></textarea>
                                 <div class="valid-feedback">
                                     Looks good!

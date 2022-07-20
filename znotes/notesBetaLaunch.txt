@@ -1,3 +1,11 @@
+~~CODING PRIORITIES (ASAP)~~
+- Show current user profile 
+    - put in navbar
+- Init edit bug
+
+
+
+
 Alert all beta testers that their info will be visible to other testers, and ONLY other testers. 
 Disclaimer that full security measures have not yet been implemented, but likelihood of any penetration/attack is low. 
 Any trouble at all email me directly
@@ -29,6 +37,8 @@ Permission to support initiatives?
 How do we make groups "private?"
 
 ~~Errors:
+Back to previous page button on error page?
+Initiative edit bug, problem with .map ?
 Switch username to use name in user profiles, group members, initiative supporters
 Hide edit user info button if user is not viewing own profile
 When user tries to login to non-existant account, appropriate error message

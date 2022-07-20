@@ -82,6 +82,23 @@ module.exports.showUser = async (req, res) => {
     res.render('users/show', { user })
 }
 
+module.exports.currentUser = async (req, res) => {
+    const user = await User.findById(req.params.id)
+    .populate({
+        path: 'groups',
+        populate: {
+            path: 'group'
+        }
+    })
+    .populate({
+        path: 'initiatives',
+        populate: {
+            path: 'initiative'
+        }
+    });
+    res.render('users/current', { user })
+}
+
 module.exports.renderEditForm = async (req, res) => {
     const { id } = req.params;
     const user = await User.findById(id);
