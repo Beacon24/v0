@@ -96,7 +96,7 @@ module.exports.supportInitiative = async (req, res) => {
     user.initiatives.addToSet(initiative);
     await initiative.save();
     await user.save();
-    req.flash('success', 'JOINED initiative!');
+    req.flash('success', 'Now supporting initiative!');
     res.redirect(`/initiatives/${initiative._id}`);
 }
 

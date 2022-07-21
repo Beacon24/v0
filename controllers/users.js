@@ -127,7 +127,7 @@ module.exports.updateUser = async (req, res) => {
         }
         await user.updateOne({$pull: {images: {filename: {$in: req.body.deleteImages}}}})
     }
-    req.flash('success', 'Succesfully changed shit around!')
+    req.flash('success', 'Changes made succesfully!')
     res.redirect(`/users/${user._id}`)
 }
 //first attempt at users joining groups
