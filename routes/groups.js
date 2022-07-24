@@ -25,7 +25,9 @@ router.route('/:id')
     .put(isLoggedIn, isCreator, upload.array('image'), validateGroup, catchAsync(groups.updateGroup))
     .delete(isLoggedIn, isCreator, catchAsync(groups.deleteGroup))
 
+
 router.post('/:id/join', isLoggedIn, catchAsync(groups.joinGroup))
+router.delete('/:id/leave', isLoggedIn, catchAsync(groups.leaveGroup))
 
 router.get('/:id/edit', isLoggedIn, isCreator, catchAsync(groups.renderEditForm))
 

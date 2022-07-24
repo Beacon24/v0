@@ -59,7 +59,15 @@
               <% } %> 
             </div>
             <div class="card-body">
-            <a href="/users/<%= user._id  %>/edit" class="card-link btn btn-primary p-2">Edit User Profile</a>
+
+            <% if( currentUser && user._id.equals(currentUser._id) ) { %> 
+              <a href="/users/<%= user._id  %>/edit" class="card-link btn btn-primary p-2">Edit User Profile</a>
+              <form class="d-inline" action="/users/<%= user._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+                </form>
+              <% } %>
             <a href="/users" class="card-link btn btn-primary p-2">Return to All</a>
             </div>
         </div>

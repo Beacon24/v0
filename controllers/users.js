@@ -154,7 +154,18 @@ module.exports.updateUser = async (req, res) => {
 //     res.redirect(`/groups/${group._id}`);
 // }
 
-
+module.exports.deleteUser = async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findById(id);
+    if(!user.equals(req.user._id)){
+        req.flash('error', 'You dont have permission to do that!');
+        return res.redirect(`/users/${id}`);
+    } else {
+        await User.findByIdAndDelete(req.params.id);
+    }
+    req.flash('success', 'Succesfully deleted user!')
+    res.redirect('/users');
+}
 
 module.exports.logout = (req, res) => {
     req.logout();

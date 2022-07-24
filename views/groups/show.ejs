@@ -59,6 +59,11 @@
                       Join
                   </button>
                 </form>
+                <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
+                  <button class="btn btn-danger">
+                      Leave
+                  </button>
+                </form>
             </div>
 
             <a href="/groups" class="card-link btn btn-primary">Return to All</a>

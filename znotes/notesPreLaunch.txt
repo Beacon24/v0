@@ -35,6 +35,8 @@ Users:
 - Active user profile page? - button in users index - show in Navbar?
     (if currentUser?)
 - Option to leave groups, stop supporting initiatives
+    -STUCK:how to leave group, path hitting correctly, "deleteOne(user)" in controller not recognized as function. 
+     problem is with mongoose syntax, i'm trying to treat an array like a collection?
 
 Initiatives:
 - restrict view of supporters
