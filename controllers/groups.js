@@ -115,16 +115,15 @@ module.exports.joinGroup = async (req, res) => {
 }
 
 module.exports.leaveGroup = async (req, res) => {
-    console.log("DID IT RUN?")
     const { id } = req.params;
-    console.log("~~~~~id")
-    console.log(id)
     const user = req.user;
-    console.log("user")
-    console.log(user)
     const group = await Group.findById(id);
-    group.members.deleteOne(user);
-    user.groups.deleteOne(group);
+    group.members.updateOne(
+        { $pull: user}
+    );
+    user.groups.updateOne(
+        { $pull: group}
+    );
     await group.save();
     await user.save();
     req.flash('success', 'Left group!');

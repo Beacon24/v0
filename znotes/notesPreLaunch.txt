@@ -37,6 +37,8 @@ Users:
 - Option to leave groups, stop supporting initiatives
     -STUCK:how to leave group, path hitting correctly, "deleteOne(user)" in controller not recognized as function. 
      problem is with mongoose syntax, i'm trying to treat an array like a collection?
+     No, updateOne also not a function, and this is proper sytax, I think?
+     Help perhaps needed
 
 Initiatives:
 - restrict view of supporters
