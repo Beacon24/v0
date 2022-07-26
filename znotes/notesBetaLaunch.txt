@@ -37,6 +37,7 @@ Permission to support initiatives?
 How do we make groups "private?"
 
 ~~Errors:
+When asked to login, afterwords use should be returned to former page but seems instead to go to error page
 "Cannot read properties of undefined (reading 'map')
     at module.exports.updateInitiative (/home/jared/Beacon/Beacon 0.21/controllers/initiatives.js:72:28)"
 Back to previous page button on error page?
