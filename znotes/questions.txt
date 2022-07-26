@@ -1,1 +1,0 @@
-I want to add a location attribute with MapBoxGLJS to user profiles on an app I'm designing using JS, node, and MongoDB with Mongoose. I am using 

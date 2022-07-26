@@ -1,0 +1,21 @@
+Clicked show group on FairBnB, triggered error:
+???? ExpressError: Page not Found
+    at /home/jdubin/Documents/Beacon/v0/index.js:124:10
+    at Layer.handle [as handle_request] (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:144:13)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:138:14)
+    at Route.dispatch (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/layer.js:95:5)
+    at /home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/index.js:284:15
+    at param (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/jdubin/Documents/Beacon/v0/node_modules/express/lib/router/index.js:280:10) {
+  statusCode: 404
+}
+
