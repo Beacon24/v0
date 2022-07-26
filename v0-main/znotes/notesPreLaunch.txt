@@ -1,0 +1,146 @@
+look at find({}) in the controllers, thats where search may happen
+age restrictions?
+add full name to user profiles? as opposed to username?
+Init error:
+supporters not defined yet? 
+MAPBOX ERROR
+Problem was with clust id redundant names in js file. 
+
+Question: How do I use Mongo CLI with online (atlas?) remote dbs?
+
+Add field for Name to user model
+
+
+To Do:
+SCHEDULE NEXT BOARD MEETING
+Icons?
+
+Deployment:
+- better secrets for sessions? make env variables?
+
+Security:
+- Add join-group, support init, view group, view init aproval.
+
+Style:
+- user profile edit page, form is narrow collumn
+- map popups, add image?
+- move group member lists to separate page? hide to non-members. 
+- problem with overlapping cluster circles on maps
+
+Functionality:
+- hide account creation when logged in
+- ask 'are you sure' with deletion
+- make way for inits and groups to be associated, plus groups and groups
+
+Users:
+- Active user profile page? - button in users index - show in Navbar?
+    (if currentUser?)
+- Option to leave groups, stop supporting initiatives
+    -STUCK:how to leave group, path hitting correctly, "deleteOne(user)" in controller not recognized as function. 
+     problem is with mongoose syntax, i'm trying to treat an array like a collection?
+     No, updateOne also not a function, and this is proper sytax, I think?
+     Help perhaps needed
+
+Initiatives:
+- restrict view of supporters
+- show location like groups pages
+- show page image is goofy in layout, bleeds through to bottom below text
+- make actions into an array, at least for display
+- update - bugs - add image map features to edit page/form
+- show page formatting
+    - actions, offerings, and needs in styled list (change input as well?)
+- make Time key searchable, plus TBD, ongoing options
+- make supporters into links - must be logged in
+
+Groups: 
+- make members into links - must be logged in
+
+Explore:'
+- make all locations into links - how? where do links go?
+- update user and group models with final structure
+- add search/filter options
+- add geocoder search to maps (for place search - zoom to?)
+- Let index body be search results
+
+General:
+- Create tickets for all remaining work items
+- create search
+    - search by name, keywords (index summary, description, actions, name), location, time
+- Show individual profile pages as popup over index
+- create alert on attempted duplicate joins for inits and groups (addToSet)
+- add small maps to show pages for inits and users
+- registration flow, make account and then profile?
+
+
+CURRENT BUGS/CHALLENGES
+- bug on init show page, "cast to objectid failed"
+    for some reason the username value "test" is being fed to mongo as an id
+    for the user when I try to call for the supporters of the inititaive.
+
+
+How will search work?
+
+User sends a READ request through a form which sets and sends the query,
+    query (defined in controller) returns findMany() results according to form inputs
+
+
+MEME IDEAS:
+
+Whistling dude with social media vs. beacon 
+"The Candidates on the Issues" but with "How the Networks Compare"
+    - issues such as:
+        - "Your attention"
+        - "Your time"
+        - "Your money"
+            -"Allow us to direct as much of it as possible into the pockets of clients."
+            -"None of our business, 
+            but could you give us just a little bit 
+            each month so that we can keep our service 
+            free and useful for everyone, forever?"
+Knock off of Facebook's "Free. Forever." logo
+    - "Free. For everyone. For real"
+    - "What they say/What they mean"
+        "What they said: Free Forever"
+        "What they meant: We make money off your usage"
+        What we say: "Free for everyone. For real."
+        What we mean: "It's true! Would you donate a little money to help us keep it so?"
+
+
+Offerings/Needs 
+
+    Change to "Assistance Needed/Assistance Offered"?
+    key:value pairs 
+    Should these be pre-set checkbox categories? 
+        Transportation
+        Food
+        Education
+        Skilled Assistance
+            - Manual Labor
+            - Organization
+            - Legal
+            - Financial
+            - Mechanics
+            - Home maintenance
+            - Garden/Farm
+        Childcare
+        Petcare
+
+    Should Init model have needs/offerings?
+
+    Make it so "support for X initiative" can be listed under needs for groups/users
+
+
+
+
+Snippets:
+
+            <div class="col-md-4">
+                <% if(user.images.length) { %> 
+               <img class="img-fluid" src="<%= user.images[0].url%>" alt=""> 
+                <% }else {%> 
+                <img class="img-fluid" src="" alt="">
+                <% } %> 
+            </div>
+
+
+Longterm: Calendar synch

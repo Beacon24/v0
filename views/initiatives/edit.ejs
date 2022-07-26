@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate')%>
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Edit Initiative</h1>
+            <form action="/initiatives/<%= initiative._id%>?_method=PUT" method="POST" novalidate class="to-validate">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Name</label>
+                    <input class="form-control" type="text" id="title" name="initiative[title]" value="<%= initiative.title%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="summary">Summary - a brief preview description of what your initiative is</label>
+                    <textarea class="form-control" type="text" id="summary" name="initiative[summary]" required><%= initiative.summary%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>            
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="initiative[location]" value="<%= initiative.location%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="time">Time</label>
+                    <input class="form-control" type="text" id="time" name="initiative[time]" value="<%= initiative.time%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="contact">How can initiative leadership be contacted? Eventually you will be able to message and discuss through Beacon's own encrypted channels. For now, let people know how best to reach you.</label>
+                    <textarea class="form-control" type="text" id="contact" name="initiative[contact]"><%= initiative.contact%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Describe the initiative in as much detail as you like.</label>
+                    <textarea class="form-control" type="text" id="description" name="initiative[description]"><%= initiative.description%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="actions">What specific actions are being taken -is help being sought, or offered? Action items are concrete ways for current and new supporters to get involved.</label>
+                    <textarea class="form-control" type="text" id="actions" name="initiative[actions]"><%= initiative.actions%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="offerings">Is anything being offered by this inititiative? Think in simple categories that could be easily searched.</label>
+                    <textarea class="form-control" type="text" id="offerings" name="initiative[offerings]"><%= initiative.offerings%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="needs">Is there anything this initiative needs? Think in simple categories that could be easily searched.</label>
+                    <textarea class="form-control" type="text" id="needs" name="initiative[needs]"><%= initiative.needs%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Add image(s)!</label>
+                        <input class="form-control" type="file" name="image" id="image" multiple>
+                    </div>
+                    <div class="valid-feedback">
+                        Lookin' good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% initiative.images.forEach(function(img, i) { %>
+                        <img src="<%=img.thumbnail %>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value=<%=img.filename%>>
+                        </div>
+                        <label for="image-<%=i%>">Delete?</label>
+                        <% })%> 
+                </div>
+                <div class="mb-3">
+                <button class="btn-success">Update Initiative</button>
+                </div>
+            </form>
+            <footer>
+                <a href="/initiatives/<%= initiative._id%>">Back to initiative</a>
+                <a href="/initiatives/">Edit initiative</a>
+                <a href="/initiatives">All initiatives</a>
+            </footer>        
+        </div>
+    </footer>

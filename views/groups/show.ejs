@@ -1,0 +1,83 @@
+<% layout('/layouts/boilerplate')%>
+
+<div class="row">
+    <div class="col-4">
+        <div id="groupCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% group.images.forEach((img, i) => { %> 
+            <div class="carousel-item <%=  i === 0 ? 'active' : ''%>">
+              <img src="<%= img.url%> " class="d-block w-100" alt="">
+            </div>
+            <%  }) %> 
+          </div>
+          <% if(group.images.length > 1) { %> 
+          <button class="carousel-control-prev" type="button" data-bs-target="#groupCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#groupCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <% } %> 
+        </div>
+        <div class="" id='map'>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="card mb-5">
+          <h1 class="card-title m-3"><%= group.title%></h1>
+            <div class="card-body">
+              <p class="card-text"><%= group.description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"><b>Location: </b><%= group.location %></li>
+              <li class="list-group-item"><b>Led by: </b><a href="/users/<%= group.creator.id %>"><%= group.creator.username %></a></li>
+              <li class="list-group-item"><b>Offerings:</b> <%= group.offerings %></li>
+              <li class="list-group-item"><b>Needs:</b> <%= group.needs %></li>
+            </ul>
+            <div class="card-body">
+              <!-- do i need to do a for let statement here? -->
+              <p><b>Members:</b></p>
+              <% for(let member of group.members){ %>
+                <li class="list-group-item"><a href="/users/<%= member.id %>"><%= member.username%></a></li>
+              <% } %> 
+
+            </div>
+
+            <div class="card-body">
+              <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
+              <a href="/groups/<%= group._id%>/edit" class="card-link btn btn-info">Edit</a>
+              <form class="d-inline" action="/groups/<%= group._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+                </form>
+              <% } %>
+                <form class="d-inline" action="/groups/<%= group._id%>/join" method="POST">
+                  <button class="btn btn-danger">
+                      Join
+                  </button>
+                </form>
+                <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
+                  <button class="btn btn-danger">
+                      Leave
+                  </button>
+                </form>
+            </div>
+
+            <a href="/groups" class="card-link btn btn-primary">Return to All</a>
+        </div>
+
+    </div>
+    <div class="col-12">
+
+    </div>
+</div>
+
+<script>
+  const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+  const group = <%-JSON.stringify(group)%> 
+</script>
+
+<script src="/javascripts/showPageMap.js"></script>

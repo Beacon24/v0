@@ -1,0 +1,86 @@
+
+<% layout('/layouts/boilerplate')%>
+
+<div class="row">
+    <div class="col-4">
+        <div id="groupCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% user.images.forEach((img, i) => { %> 
+            <div class="carousel-item <%=  i === 0 ? 'active' : ''%>">
+              <img src="<%= img.url%> " class="d-block w-100" alt="">
+            </div>
+            <%  }) %> 
+          </div>
+          <% if(user.images.length > 1) { %> 
+          <button class="carousel-control-prev" type="button" data-bs-target="#groupCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#groupCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <% } %> 
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="card mb-5">
+          <h3 class="card-title m-3"><%= user.name  %>'s Profile Page!</h3>
+          <div class="row">
+            <!-- <div class="col-md-4">
+                <% if(user.images.length) { %> 
+               <img class="img-fluid" src="<%= user.images[0].url%>" alt=""> 
+                <% }else {%> 
+                <img class="img-fluid" src="" alt="">
+                <% } %> 
+            </div> -->
+          </div>
+            <div class="card-body">
+              <p class="card-text"><strong>Name:</strong> <%= user.name%></p>
+              <p class="card-text"><strong>Bio:</strong> <%= user.bio%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"><b>Location: </b><%= user.location %></li>
+              <li class="list-group-item"><b>Interests: </b><%= user.interests %></li>
+              <li class="list-group-item"><b>Offerings:</b> <%= user.offerings %></li>
+              <li class="list-group-item"><b>Needs:</b> <%= user.needs %></li>
+            </ul>
+            <div class="card-body">
+              <!-- do i need to do a for let statement here? -->
+              <p><b>Groups:</b></p>
+              <% for(let group of user.groups){ %>
+                <li class="list-group-item"><a href="/groups/<%= group.id%>"><%= group.title%></a></li>
+              <% } %> 
+            </div>
+            <div class="card-body">            
+              <p><b>Initiatives:</b></p>
+              <% for(let initiative of user.initiatives){ %>
+                <li class="list-group-item"><a href="/initiatives/<%= initiative.id%>"><%= initiative.title%></a></li>
+              <% } %> 
+            </div>
+            <div class="card-body">
+
+            <% if( currentUser && user._id.equals(currentUser._id) ) { %> 
+              <a href="/users/<%= user._id  %>/edit" class="card-link btn btn-primary p-2">Edit User Profile</a>
+              <form class="d-inline" action="/users/<%= user._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+                </form>
+              <% } %>
+            <a href="/users" class="card-link btn btn-primary p-2">Return to All</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+    <div id='map'>
+    </div>
+</div>
+
+<script>
+  const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+  const user = <%-JSON.stringify(user)%> 
+</script>
+
+<script src="/javascripts/showPageMap.js"></script>
