@@ -118,16 +118,12 @@ module.exports.leaveGroup = async (req, res) => {
     const { id } = req.params;
     const user = req.user;
     const group = await Group.findById(id);
-    console.log("group");
-    console.log(group)
     group.updateOne(
-        { $pull: { members: user} }
+        { $pull: { "group.members": user} }
     );
     user.updateOne(
-        { $pull: { groups: group} }
+        { $pull: { "user.groups": group} }
     );
-    console.log("group after");
-    console.log(group);
     await group.save();
     await user.save();
     req.flash('success', 'Left group!');
