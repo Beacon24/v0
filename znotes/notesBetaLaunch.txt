@@ -26,6 +26,19 @@ Questions to ask users:
 
 Make it so users can leave groups/inits
 
+Abbe Walkthrough
+Registration - password text
+asterisks for required
+Why is home still selected after resgiration
+tell people to scroll down to view profiles
+direct access to profiles thru group pages? check security
+usernames on user map
+explain how map works, explain how to add own initiatives and groups
+overlapping blips on map for duplicate locations
+remove submit button on explore page
+
+fork apps? beta vs. dev?
+
 ~~Security:
 Make sure user map points don't show on explore map unless someone is logged in.
     alt: don't show explore page unless account made
@@ -37,6 +50,7 @@ Permission to support initiatives?
 How do we make groups "private?"
 
 ~~Errors:
+Navbar does not highlight current page
 When asked to login, afterwords use should be returned to former page but seems instead to go to error page
 "Cannot read properties of undefined (reading 'map')
     at module.exports.updateInitiative (/home/jared/Beacon/Beacon 0.21/controllers/initiatives.js:72:28)"

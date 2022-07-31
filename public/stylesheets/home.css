@@ -34,3 +34,9 @@ body {
     color: white;
     border-bottom-color: white
 }
+
+#homeText {
+    background-color:black;
+    opacity: 80%;
+    border-radius: 20px;
+}

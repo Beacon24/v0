@@ -35,6 +35,34 @@
 #login {
     width: 300px;
 }
+#homeText {
+    background-color:black;
+    opacity: 50%;
+}
+
+
+.nav-link {
+    padding: 0.25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 1rem;
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom-color: white;
+    color: white;
+}
+
+.btn-secondary, .btn-secondary:hover {
+    color: #333;
+    text-shadow: none;
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color: white
+}
 
 /* .carousel-inner {
     max-height: 400px !important;
