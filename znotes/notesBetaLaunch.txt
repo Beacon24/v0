@@ -50,6 +50,7 @@ Permission to support initiatives?
 How do we make groups "private?"
 
 ~~Errors:
+Username shows up in explore map popups - others too?
 Navbar does not highlight current page
 When asked to login, afterwords use should be returned to former page but seems instead to go to error page
 "Cannot read properties of undefined (reading 'map')

@@ -20,6 +20,7 @@ Deployment:
 
 Security:
 - Add join-group, support init, view group, view init aproval.
+- private user profiles, hidden until request
 
 Style:
 - user profile edit page, form is narrow collumn
