@@ -37,7 +37,6 @@
               <li class="list-group-item"><b>Needs:</b> <%= group.needs %></li>
             </ul>
             <div class="card-body">
-              <!-- do i need to do a for let statement here? -->
               <p><b>Members:</b></p>
               <% for(let member of group.members){ %>
                 <li class="list-group-item"><a href="/users/<%= member.id %>"><%= member.name%></a></li>
@@ -54,16 +53,20 @@
                 </button>
                 </form>
               <% } %>
-                <form class="d-inline" action="/groups/<%= group._id%>/join" method="POST">
-                  <button class="btn btn-danger">
-                      Join
-                  </button>
-                </form>
+        <!-- THIS IF STATEMENT IS NOT WORKING -->
+              <% if( group.members.includes('currentUser.name') ) { %>
                 <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
                   <button class="btn btn-danger">
                       Leave
                   </button>
                 </form>
+              <% } else { %>
+                <form class="d-inline" action="/groups/<%= group._id%>/join" method="POST">
+                  <button class="btn btn-danger">
+                      Join
+                  </button>
+                </form>
+              <% } %>
             </div>
 
             <a href="/groups" class="card-link btn btn-primary">Return to All</a>

@@ -22,7 +22,8 @@ Questions to ask users:
 
 
 ~~~*~~~Bugs/Upgrades/Details~~~*~~~
-
+QUESTIONS FOR MONGODB
+Remove Test/Root profile from view
 
 Make it so users can leave groups/inits
 
@@ -67,6 +68,9 @@ Add 'go back' button to error page
 
 - Upgrade mongoose?
 - connect-mongo, had to downgrade to v 3.1.2 to avoid bug, how to upgrade?
+
+~~User Experience
+- Make text boxes in edit view bigger by default
 
 
 Network Development
