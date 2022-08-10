@@ -11,3 +11,31 @@ If there's time:
 What are cluster shards?
 How does Mongo pay scale work?
 Can I hide data entries (i.e. root user?)
+
+Normalization
+
+
+{
+        $search: {
+            index: 'First',
+            compound:{
+                "should":[
+                    {    
+                        "autocomplete": {
+                            query: 'club',
+                            path: 'title'
+                        }
+                          
+                    },
+                    {
+                        "text": {
+                            query: 'club',
+                            path: 'Description'
+                        }
+                    }
+                ]
+            }
+        }
+    },{
+         $project: {_id:0, title:1}
+    }

@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const ImageSchema = new Schema({
     url: String,
     filename: String,
+    //add type field
 })
 
 ImageSchema.virtual('thumbnail').get(function(){

@@ -15,13 +15,14 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.search = async (req, res) => {
-    console.log("req.params")
-    console.log(req.params)
-    const keywords = req.params
-    console.log(keywords)
+    console.log("test~~~")
+    console.log(req.body.keywords)
+    const keywords = req.body.keywords
     const groups = await Group.find({$or: [{title: keywords}, {description: keywords}]})
     //something here to conditionally run $and/$or search?
-    const initiatives = await Initiative.find({$or: [{title: keywords}, {description: keywords}, {summary: keywords}]})    
-    const users = await User.find({bio: keywords})
-    res.render('explore/results', { groups, initiatives, users })
+    // const initiatives = await Initiative.find({$or: [{title: keywords}, {description: keywords}, {summary: keywords}]})    
+    // const users = await User.find({bio: keywords})
+    console.log("groups result:")
+    console.log(groups)
+    // res.render('explore/results', { groups })
 }
