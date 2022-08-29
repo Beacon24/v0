@@ -40,6 +40,10 @@
     opacity: 50%;
 }
 
+#homeText2 {
+    background-color:black;
+    opacity: 50%;
+}
 
 .nav-link {
     padding: 0.25rem 0;

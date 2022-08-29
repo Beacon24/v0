@@ -35,7 +35,7 @@ body {
     border-bottom-color: white
 }
 
-#homeText {
+.homeText {
     background-color:black;
     opacity: 80%;
     border-radius: 20px;

@@ -18,8 +18,35 @@ module.exports.search = async (req, res) => {
     console.log("test~~~")
     console.log(req.body.keywords)
     const keywords = req.body.keywords
-    const groups = await Group.find({$or: [{title: keywords}, {description: keywords}]})
+    const groups = db.initiatives.aggregate([
+        {
+            $search: {
+                index: 'firstInitiatives',
+                compound:{
+                    "should":[
+                        {    
+                            "autocomplete": {
+                                query: keywords,
+                                path: 'title'
+                            }
+                              
+                        },
+                        {
+                            "text": {
+                                query: keywords,
+                                path: 'summary'
+                            }
+                        }
+                    ]
+                }
+            }
+        },{
+             $project: {_id:0, title:1}
+        }
+    
+    ])
     //something here to conditionally run $and/$or search?
+        //const groups = await Group.find({$or: [{title: keywords}, {description: keywords}]})
     // const initiatives = await Initiative.find({$or: [{title: keywords}, {description: keywords}, {summary: keywords}]})    
     // const users = await User.find({bio: keywords})
     console.log("groups result:")

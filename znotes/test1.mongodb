@@ -5,23 +5,23 @@
 
 // Select the database to use.
 use('test');
-db.users.aggregate([
+db.initiatives.aggregate([
     {
         $search: {
-            index: 'First',
+            index: 'firstInitiatives',
             compound:{
                 "should":[
                     {    
                         "autocomplete": {
-                            query: 'the',
-                            path: 'name'
+                            query: 'Party',
+                            path: 'title'
                         }
                           
                     },
                     {
                         "text": {
-                            query: 'the',
-                            path: 'bio'
+                            query: 'Western',
+                            path: 'summary'
                         }
                     }
                 ]
