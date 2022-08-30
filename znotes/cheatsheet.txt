@@ -16,7 +16,7 @@ Mongo Basic Commands:
     db.
     db.dropDatabase()
     db.createCollection(name)
-    Show collections.
+    Show collections
     db.COLLECTION_NAME.drop()
     db.COLLECTION_NAME.find()
     db.COLLECTION_NAME.find( { field: value } )

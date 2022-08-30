@@ -1,5 +1,5 @@
 <% layout('/layouts/boilerplate')%>
-<h1 class="center">EXPLORE PAGE - Under Construction</h1>
+<h1 class="b-5 text-center">Welcome to the Explore Page - Under Construction</h1>
 <h4 class="p-3">Zoom into a region and click on the points to see who's around and what's happening!</h4>
 <p>This page shows initiatives, groups, and users all on one map.
     In version 1 you will be able to use this page to search and filter through group, initiative, and user profiles, near and far. 
@@ -9,10 +9,121 @@
 </div>
 <div>
     <form action="/explore/search" method="POST" novalidate>
-        <input type="text" id="keywords" name="keywords">
-        <button>Submit</button>
+        <label for="keywords">Search Function Coming Soon!</label>
+        <input type="text" text="test" id="keywords" name="keywords">
+        <button disabled>Submit</button>
     </form>
 </div>
+<div class="card">
+    <h3 class="card-title m-3">Groups:</h3>
+    <ul>
+        <% for (let group of groups) {%>
+                <div class="card m-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <% if(group.images.length) { %> 
+                           <img class="img-fluid" src="<%= group.images[0].url%>" alt=""> 
+                            <% }else {%> 
+                            <img class="img-fluid" src="" alt="">
+                            <% } %> 
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= group.title %></h5>
+                                <p class="card-text"><%= group.description.substring(0,300) %></p>
+                                <p class="card-text text-muted">
+                                    <%= group.location %>
+                                </p>
+                                <a href="/groups/<%= group._id%>" class="btn btn-primary">View <%= group.title%></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
+    </ul>
+</div>
+<div class="card">
+        <h3 class="m-3">Initiatives:</h3>
+        <ul>
+            <% for (let initiative of initiatives) {%>
+                    <div class="card m-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <% if(initiative.images.length) { %> 
+                               <img class="img-fluid" src="<%= initiative.images[0].url%>" alt=""> 
+                                <% }else {%> 
+                                <img class="img-fluid" src="" alt="">
+                                <% } %> 
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3"><%= initiative.title %></h5>
+                                    <p class="card-text text-muted">
+                                        <b>Location: </b><%= initiative.location %>
+                                    </p>
+                                    <p class="card-text text-muted">
+                                        <b>Time: </b><%= initiative.time %>
+                                    </p>
+                                    <p class="card-text text-muted">
+                                        <%= initiative.summary %>
+                                    </p>                                
+                                    <a href="/initiatives/<%= initiative._id%>" class="btn btn-primary">View <%= initiative.title%></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <% } %>
+        </ul>
+</div>
+<% if(currentUser){ %>
+<div class="card">
+    <h3 class="m-3">Users:</h3>
+    <% for (let user of users) {%>
+        <div class="card my-1">
+            <div class="row">
+                <div class="col-md-2 col-sm-4 mt-3 mb-3 p-4">
+                    <div class="row">
+                        <!-- <h4 class="card-title"><%= user.username  %> </h4> -->
+                        <h5 class="card-title"><%= user.name  %> </h5>
+                    </div>
+                    <div class="row">
+                        <div class="">
+                            <% if(user.images.length) { %> 
+                           <img class="img-fluid" src="<%= user.images[0].url%>" alt=""> 
+                            <% }else {%> 
+                            <img class="img-fluid" src="" alt="">
+                            <% } %> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-4 mt-3 mb-3">
+                    <p class="card-text"><b>Location: </b><%= user.location  %> </p>
+                    <p class="card-text"><b>Bio: </b><%= user.bio.substring(0,300) %></p>
+                    <p class="card-text"><b>Offering: </b><%= user.offerings  %> </p>
+                    <p class="card-text"><b>Needs: </b><%= user.needs  %> </p>
+                    <a href="/users/<%= user._id%>" class="btn btn-primary">View <%= user.name%>'s Profile</a>
+                </div>
+                <div class="col-md-4 col-sm-4 mt-3 mb-3 p-4">
+                    <p class="card-text"><b>Groups: </b><% for(let group of user.groups){ %>
+                        <li class="list-group-item"><a href="/groups/<%= group.id%>"><%= group.title%></a></li>
+                      <% } %></p>
+                    <p class="card-text"><b>Initiatives: </b><% for(let initiative of user.initiatives){ %>
+                        <li class="list-group-item"><a href="/initiatives/<%= initiative.id%>"><%= initiative.title%></a></li>
+                      <% } %> </p>
+                </div>
+            </div>
+        </div>
+    <% } %>  
+</div>
+<% } else { %>
+<div class="card">
+    <h3 class="m-3">Users:</h3>
+    <p>Log in to see other users!</p>
+    <a href="/users/register" class="m-3 py-2 btn btn-lg btn-secondary font-weight-bold bg-white">Create an Account</a>
+    <a href="/users/login" class="m-3 py-2 btn btn-lg btn-secondary font-weight-bold bg-white">Log In</a>
+</div>
+<% } %>
+
 
 <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';

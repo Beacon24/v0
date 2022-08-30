@@ -10,7 +10,21 @@ const geocoder = mbxGeocoding({ accessToken: mapBoxToken })
 module.exports.index = async (req, res) => {
     const groups = await Group.find({});
     const initiatives = await Initiative.find({});
-    const users = await User.find({});
+    const users = await User.find({})
+    .populate({
+        path: 'groups',
+        populate: {
+            path: 'group',
+            populate: 'title'
+        }
+    })
+    .populate({
+        path: 'initiatives',
+        populate: {
+            path: 'initiative',
+            populate: 'title'
+        }
+    });
     res.render('explore/index', { groups, initiatives, users })   
 }
 
