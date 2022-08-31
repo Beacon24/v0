@@ -53,7 +53,7 @@ const UserSchema = new Schema({
 
 UserSchema.virtual('properties.popUpMarkup').get(function(){
     return `
-    <strong><a href="/users/${this._id}">${this.username}</a></strong>
+    <strong><a href="/users/${this._id}">${this.name}</a></strong>
     <p>${this.bio.substring(0,100)}...</p>
     `;
 });
