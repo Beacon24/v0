@@ -43,7 +43,7 @@ module.exports.login = (req, res) => {
     const redirectUrl = req.session.returnTo || '/';
     delete req.session.returnTo;
     // this should be res.redirect('redirectUrl') but for some reason broke when I extended registration/login into its own user routes.
-    res.redirect('redirectUrl')
+    res.redirect(redirectUrl)
 }
 
 module.exports.index = async (req, res) => {
