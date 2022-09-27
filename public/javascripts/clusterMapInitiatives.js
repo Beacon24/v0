@@ -8,6 +8,13 @@ const map = new mapboxgl.Map({
 });
 
 map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+map.addControl(
+    new MapboxGeocoder({
+    accessToken: mapToken,
+    mapboxgl: mapboxgl
+    })
+    );
  
 map.on('load', () => {
 // Add a new source from our GeoJSON data and

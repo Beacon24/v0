@@ -17,6 +17,9 @@ Icons?
 
 FINISH LEAVE GROUP/INIT FUNCTIONING
 
+Display area results in list view.
+
+
 Deployment:
 - better secrets for sessions? make env variables?
 
