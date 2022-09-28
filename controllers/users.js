@@ -167,6 +167,12 @@ module.exports.deleteUser = async (req, res) => {
     res.redirect('/users');
 }
 
+module.exports.connectRequest = async (req, res) => {
+    const { id } = req.params;
+    const userB = await User.findById(id);
+
+}
+
 module.exports.logout = (req, res) => {
     req.logout();
     req.flash('success', 'see you soon!')

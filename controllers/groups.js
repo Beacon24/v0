@@ -104,6 +104,10 @@ module.exports.deleteGroup = async (req, res) => {
 
 module.exports.joinGroup = async (req, res) => {
     const { id } = req.params;
+    console.log("req.params")
+    console.log(req.params);
+    console.log("id");
+    console.log(id);
     const user = req.user;
     const group = await Group.findById(id);
     group.members.addToSet(user);
