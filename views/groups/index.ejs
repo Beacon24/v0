@@ -1,19 +1,18 @@
 
     <% layout('/layouts/boilerplate')%>
-    <h1 class="mb-5 text-center">Welcome to the Groups Page</h1>
-    <p>Explore and join groups created by other users, or add your own with the <b>Add a Group</b> button below the map, on the left!</p>
-    <p>The <b>Filter</b> and <b>Search</b> buttons are under construction, and will allow you to explore groups by location, category, keywords, and more.</p>
     <div id="cluster-map-groups">
     </div>
     <div>
         <a href="groups/new"><button class="m-1 mt-3 btn btn-primary">Add a Group</button></a>
-        <button class="m-1 mt-3 btn btn-dark">Filter</button>
-        <button class="m-1 mt-3 btn btn-secondary">Search</button>
+        <button class="m-1 mt-3 btn btn-dark">Asheville/WNC</button>
+        <button class="m-1 mt-3 btn btn-secondary">Chapel Hill and Carboro, NC</button>
+        <button class="m-1 mt-3 btn btn-secondary">Naples, FL</button>
     </div>
-    <div class="">
+    <div class="card">
     <ul>
+        <h2 class="card-title mt-3">Groups</h2>
         <% for (let group of groups) {%>
-                <div class="card mt-5 mb-3">
+                <div class="card my-3">
                     <div class="row">
                         <div class="col-md-4">
                             <% if(group.images.length) { %> 

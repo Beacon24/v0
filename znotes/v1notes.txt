@@ -1,1 +1,69 @@
-Testing testing 123
+To Do for V1 Launch:
+
+Remove initiatives page - Done
+Remove instructions content/words
+Add inits as subset to groups
+    new category/model? nested in groups
+    callToAction
+        name
+        location
+        time
+        description
+Move all to explore tab
+Create profile page
+Create Verification Tier and Protocol
+Add Intercom
+Bug Fixes:
+    Leave groups
+
+
+Secondary: 
+Create tutorial walkthrough (with 3rd party service)
+Create Asheville/Chapel Hill Tabs
+
+
+Specs:
+
+callsToAction copy old initiative CRUD from yelpcamp
+Validation tier - add field to User model, boolean "verified: true/false"
+If profileX validated, show other validated profiles. Hide from unvalidated. 
+
+
+
+
+ERRORS:
+on launch
+/home/jdubin/Documents/Beacon/v0/node_modules/mongodb/lib/utils.js:698
+          throw error;
+          ^
+
+Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.snrpv.mongodb.net
+    at QueryReqWrap.onresolve [as oncomplete] (node:dns:303:19) {
+  errno: undefined,
+  code: 'ESERVFAIL',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.cluster0.snrpv.mongodb.net'
+}
+
+
+
+
+
+
+
+Old Instructions/content
+
+    cut from homepage
+    <p class="homeText lead p-2"> Welcome to <strong>the Beacon Network!</strong><br>
+        Thanks for helping us test the platform at this early stage!<br>
+        Here you will find a database of <b>user, group, and initiative pages</b> that highlight avenues to participation.<br>
+        Create an account to explore, join, and create groups and initiatives.
+    </p>
+
+    <p class="homeText lead p-2">
+    Soon, you'll be able to search and filter through these pages to find the communities and causes you care about.<br>
+    In version 2, you'll be able to communicate directly with other users and groups right on Beacon, with encrypted threaded discussions, group chat, and direct messaging.
+    </p>
+
+
+

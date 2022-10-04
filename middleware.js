@@ -87,3 +87,23 @@ module.exports.validateInitiative = (req, res, next) => {
         next();
     }
 }
+
+module.exports.isCallCreator = async(req, res, next) => {
+    const { id, callId } = req.params;
+    const call = await Call.findById(callId);
+    if(!call.creator.equals(req.user._id)){
+        req.flash('error', 'You dont have permission to do that!');
+        return res.redirect(`/groups/${id}`);
+    }
+    next();
+}
+
+module.exports.validateCall = (req, res, next) => {
+    const { error } = callSchema.validate(req.body);
+    if(error){
+        const msg = error.details.map(el => el.message).join(',')
+        throw new ExpressError(msg, 400)
+    } else {
+        next();
+    }
+}

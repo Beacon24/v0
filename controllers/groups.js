@@ -1,5 +1,5 @@
 const Group = require('../models/group')
-
+const Call = require('../models/call')
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding")
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken })
@@ -35,10 +35,17 @@ module.exports.createGroup = async (req, res, next) => {
 
 module.exports.showGroup = async (req, res) => {
     const group = await Group.findById(req.params.id)
-    .populate({ 
-        path: 'initiatives',
+    // .populate({ 
+    //     path: 'initiatives',
+    //     populate: {
+    //         path: 'creator'
+    //     }
+    // })
+    .populate({
+        path: 'calls',
         populate: {
-            path: 'creator'
+            path: 'name',
+            path: 'summary'
         }
     })
     .populate('creator')

@@ -24,10 +24,11 @@ const morgan = require('morgan');
 
 const MongoDBStore = require("connect-mongo")(session);
 
-const userRoutes = require('./routes/users')
+const userRoutes = require('./routes/users');
 const groupRoutes = require('./routes/groups');
-const initiativeRoutes = require('./routes/initiatives')
-const exploreRoutes = require('./routes/explore')
+const callRoutes = require('./routes/calls');
+const initiativeRoutes = require('./routes/initiatives');
+const exploreRoutes = require('./routes/explore');
 
 const { places, descriptors } = require('./seeds/seedHelpers');
 
@@ -109,6 +110,7 @@ app.use((req, res, next) => {
 
 app.use('/users', userRoutes)
 app.use('/groups', groupRoutes)
+app.use('/groups/:id/calls', callRoutes)
 app.use('/initiatives', initiativeRoutes)
 app.use('/explore', exploreRoutes)
 

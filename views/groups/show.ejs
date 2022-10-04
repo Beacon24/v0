@@ -1,8 +1,8 @@
 <% layout('/layouts/boilerplate')%>
-
+<h1 class="card-title m-3"><%= group.title%></h1>
 <div class="row">
     <div class="col-4">
-        <div id="groupCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+        <div id="groupCarousel" class="carousel slide my-3" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% group.images.forEach((img, i) => { %> 
             <div class="carousel-item <%=  i === 0 ? 'active' : ''%>">
@@ -21,12 +21,11 @@
           </button>
           <% } %> 
         </div>
-        <div class="" id='map'>
-        </div>
+        <!-- <div class="my-3" id='map'>
+        </div> -->
     </div>
     <div class="col-8">
         <div class="card mb-5">
-          <h1 class="card-title m-3"><%= group.title%></h1>
             <div class="card-body">
               <p class="card-text"><%= group.description%></p>
             </div>
@@ -36,13 +35,15 @@
               <li class="list-group-item"><b>Offerings:</b> <%= group.offerings %></li>
               <li class="list-group-item"><b>Needs:</b> <%= group.needs %></li>
             </ul>
-            <div class="card-body">
+
+           
+            <!-- <div class="card-body">
               <p><b>Members:</b></p>
               <% for(let member of group.members){ %>
                 <li class="list-group-item"><a href="/users/<%= member.id %>"><%= member.name%></a></li>
               <% } %> 
 
-            </div>
+            </div> -->
 
             <div class="card-body">
               <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
@@ -54,7 +55,7 @@
                 </form>
               <% } %>
         <!-- THIS IF STATEMENT IS NOT WORKING -->
-              <% if( group.members.includes('currentUser.name') ) { %>
+              <!-- <% if( group.members.includes('currentUser.name') ) { %>
                 <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
                   <button class="btn btn-danger">
                       Leave
@@ -66,17 +67,50 @@
                       Join
                   </button>
                 </form>
-              <% } %>
+              <% } %> -->
             </div>
 
             <a href="/groups" class="card-link btn btn-primary">Return to All</a>
         </div>
 
     </div>
-    <div class="col-12">
+    <div class="row card">
+      <div class="m-5 col-12">
+        <h2>Create a Call to Action:</h2>
+        <form class="mb-3 to-validate" action="/groups/<%=group._id%>/calls" method="POST" novalidate>
+            <div class="card-body mb-3">
+              <label for="name">Name:</label>
+              <input class="form-control" type="text" id="name" name="call[name]" required>
+              <label class="form-label" for="summary">Summary:</label>
+              <textarea class="form-control" name="call[summary]" id="summary" cols="" rows="3" required></textarea>
+              <label class="form-label" for="location">Location</label>
+              <input class="form-control" type="text" id="location" name="call[location]" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <button class="btn-success">
+              Submit
+            </button>
+        </form>
+  
+        <% for(let call of group.calls) { %>
+        <div class="card mb-2">
+          <div class="card-body">
+            <p class="card-subtitle"><b>Name: </b><%= call.name %></p>
+            <p class="card-text"><b>Summary:</b><%= call.summary %></p>
+         
+            <form action="/groups/<%=group._id%>/calls/<%=call._id%>?_method=DELETE" method="POST">
+              <button class="btn-sm btn-danger">Delete</button>
+            </form>
 
+          </div>
+        </div>
+        <% } %>
+      </div>
+  </div>
     </div>
-</div>
+    
 
 <script>
   const mapToken = '<%-process.env.MAPBOX_TOKEN%>';

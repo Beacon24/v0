@@ -47,10 +47,10 @@ const GroupSchema = new Schema({
             ref: 'User'
         }
     ],
-    initiatives: [
+    calls: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Initiative'
+            ref: 'Call'
         }
     ]
 }, opts);
