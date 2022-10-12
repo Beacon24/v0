@@ -46,12 +46,12 @@ const CallSchema = new Schema({
     contact: String,
     // offerings: String,
     // needs: String,
-    supporters: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ],
+    // supporters: [
+    //     {
+    //         type: Schema.Types.ObjectId,
+    //         ref: 'User'
+    //     }
+    // ],
     // groups: [
     //     {
     //         type: Schema.Types.ObjectId,

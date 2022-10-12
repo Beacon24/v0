@@ -1,20 +1,22 @@
 To Do for V1 Launch:
+- make it so only group creator can make call to action (isUser? isCreator? middleware)
+- add Intercom
+- hide user profiles (temporary)
+- auto zoom-to Asheville region?
+- fork a production vs. dev app?
+- Add Intercom
 
-Remove initiatives page - Done
-Remove instructions content/words
-Add inits as subset to groups
-    new category/model? nested in groups
-    callToAction
-        name
-        location
-        time
-        description
-Move all to explore tab
+To Do less urgent:
 Create profile page
-Create Verification Tier and Protocol
-Add Intercom
+Create validation tier
+Add way for groups to associate
+Add option for additional user admins in groups
+Fix explore groups/explore routes
+
+
 Bug Fixes:
-    Leave groups
+   - Calls to Action not showing properly on group show page
+   - Leave groups
 
 
 Secondary: 
@@ -24,7 +26,7 @@ Create Asheville/Chapel Hill Tabs
 
 Specs:
 
-callsToAction copy old initiative CRUD from yelpcamp
+
 Validation tier - add field to User model, boolean "verified: true/false"
 If profileX validated, show other validated profiles. Hide from unvalidated. 
 
@@ -33,17 +35,6 @@ If profileX validated, show other validated profiles. Hide from unvalidated.
 
 ERRORS:
 on launch
-/home/jdubin/Documents/Beacon/v0/node_modules/mongodb/lib/utils.js:698
-          throw error;
-          ^
-
-Error: querySrv ESERVFAIL _mongodb._tcp.cluster0.snrpv.mongodb.net
-    at QueryReqWrap.onresolve [as oncomplete] (node:dns:303:19) {
-  errno: undefined,
-  code: 'ESERVFAIL',
-  syscall: 'querySrv',
-  hostname: '_mongodb._tcp.cluster0.snrpv.mongodb.net'
-}
 
 
 

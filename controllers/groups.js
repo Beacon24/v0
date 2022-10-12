@@ -28,7 +28,7 @@ module.exports.createGroup = async (req, res, next) => {
         group.images = req.files.map(f => ({ url: f.path, filename: f.filename }))
         group.creator = req.user._id;
         await group.save();     
-        req.flash('success', 'You added a group to the database! Great job! OK!')
+        req.flash('success', 'You added a group to the database!')
         res.redirect(`/groups/${group._id}`)
 }
 
@@ -44,8 +44,11 @@ module.exports.showGroup = async (req, res) => {
     .populate({
         path: 'calls',
         populate: {
-            path: 'name',
-            path: 'summary'
+            path: 'call',
+            populate: {
+                path: 'name',
+                path: 'summary'
+            }
         }
     })
     .populate('creator')
