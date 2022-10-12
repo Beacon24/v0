@@ -1,14 +1,15 @@
 To Do for V1 Launch:
 - make it so only group creator can make call to action (isUser? isCreator? middleware)
+- Create view profile page for currentUser
 - add Intercom
 - hide user profiles (temporary)
-- auto zoom-to Asheville region?
+- auto zoom-to Asheville region
 - fork a production vs. dev app?
 - Add Intercom
 
 To Do less urgent:
-Create profile page
 Create validation tier
+Make default zoom to area Asheville
 Add way for groups to associate
 Add option for additional user admins in groups
 Fix explore groups/explore routes
@@ -24,11 +25,27 @@ Create tutorial walkthrough (with 3rd party service)
 Create Asheville/Chapel Hill Tabs
 
 
-Specs:
+Iterations:
 
+Profile Page - allow users to view and edit their own profile, with a link in navbar to get there.
 
 Validation tier - add field to User model, boolean "verified: true/false"
-If profileX validated, show other validated profiles. Hide from unvalidated. 
+    we manually toggle this field after receiving verification credentials
+    If profileX validated, show other validated profiles. Hide from unvalidated. 
+        this must exist when verified:
+        - navbar Users link
+        - showing members of groups (only if user is also member - eventually add?) (once this function re-added)
+        - access to group leader profile pages
+
+Re-add joinGroup function, fix leaveGroup function
+    Both currently commented out, leaveGroup not working. See github issue #19.
+
+Add admin true/false boolean to members of groups
+    How do we make this so group leaders can choose members or approve requests?
+    Propose specs
+
+
+
 
 
 
