@@ -16,7 +16,7 @@ const opts = { toJSON: { virtuals: true } };
 const CallSchema = new Schema({
     name: String,
     // images: [ImageSchema],
-    summary: String,
+    description: String,
     creator: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -41,9 +41,13 @@ const CallSchema = new Schema({
     // },
     location: String,
     time: String,
-    action: String,
-    links: [String],
     contact: String,
+    urlName: String,
+    url: String,
+    Facebook: String,
+    Instragram: String,
+    otherLinkName: String,
+    otherLink: String
     // offerings: String,
     // needs: String,
     // supporters: [

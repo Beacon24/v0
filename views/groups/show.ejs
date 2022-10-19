@@ -72,7 +72,7 @@
 
             <a href="/groups" class="card-link btn btn-primary">Return to All</a>
         </div>
-
+//this is what should be hidden
     </div>
     <div class="row card">
       <div class="m-5 col-12">
@@ -81,10 +81,20 @@
             <div class="card-body mb-3">
               <label for="name">Name:</label>
               <input class="form-control" type="text" id="name" name="call[name]" required>
-              <label class="form-label" for="summary">Summary:</label>
-              <textarea class="form-control" name="call[summary]" id="summary" cols="" rows="3" required></textarea>
-              <label class="form-label" for="location">Location</label>
+              <label class="form-label" for="description">Description:</label>
+              <textarea class="form-control" name="call[description]" id="description" cols="" rows="3" required></textarea>
+              <label for="location">Location:</label>
               <input class="form-control" type="text" id="location" name="call[location]" required>
+              <label for="time">Time:</label>
+              <input class="form-control" type="text" id="time" name="call[time]" required>
+              <label for="Contact">Contact:</label>
+              <input class="form-control" type="text" id="contact" name="call[contact]" required>
+              <label for="url">Website URL - please do not include "https://":</label>
+              <input class="form-control" type="text" id="url" name="call[url]" required>
+              <label for="urlName">Website Name:</label>
+              <input class="form-control" type="text" id="urlName" name="call[urlName]" required>
+              
+              
               <div class="valid-feedback">
                 Looks good!
               </div>
@@ -98,8 +108,11 @@
         <div class="card mb-2">
           <div class="card-body">
             <p class="card-subtitle"><b>Name: </b><%= call.name %></p>
-            <p class="card-text"><b>Summary:</b><%= call.summary %></p>
-            <p class="card-text"><b>id:</b><%= call._id %></p>
+            <p class="card-text"><b>Description:</b><%= call.description %></p>
+            <p class="card-text"><b>Location:</b><%= call.location %></p>
+            <p class="card-text"><b>Time:</b><%= call.time %></p>
+            <p class="card-text"><b>Contact:</b><%= call.description %></p>
+            <p class="card-text"><b>Link:<a href="https://<%= call.url %>" target="blank"></b><%= call.urlName %></a></p>
             <form action="/groups/<%=group._id%>/calls/<%=call._id%>?_method=DELETE" method="POST">
               <button class="btn-sm btn-danger">Delete</button>
             </form>

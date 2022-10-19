@@ -17,6 +17,11 @@ module.exports.createCall = async (req, res) => {
     res.redirect(`/groups/${group._id}`);
 }
 
+// module.exports.addLink = async (req, res) => {
+//     const call = await Call.findById(req.params.id)
+//     const link = new Link
+// }
+
 module.exports.deleteCall = async (req, res)=>{
     const { id, callId } = req.params;
     await Group.findByIdAndUpdate(id, { $pull: {calls: callId } })

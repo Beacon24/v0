@@ -1,5 +1,6 @@
 To Do for V1 Launch:
-- make it so only group creator can make call to action (isUser? isCreator? middleware)
+- make it so only group creator can make/delete call to action (isUser? isCreator? middleware)
+- add update/edit for calls
 - Create view profile page for currentUser
 - add Intercom
 - hide user profiles (temporary)
@@ -8,6 +9,8 @@ To Do for V1 Launch:
 - Add Intercom
 
 To Do less urgent:
+Update logo
+    add logo to navbar
 Create validation tier
 Make default zoom to area Asheville
 Add way for groups to associate
@@ -16,7 +19,7 @@ Fix explore groups/explore routes
 
 
 Bug Fixes:
-   - Calls to Action not showing properly on group show page
+   - Calls to Action not showing properly on group show page - fixed, was problem with populate syntax
    - Leave groups
 
 
