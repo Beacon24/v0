@@ -68,6 +68,10 @@
     border-bottom-color: white
 }
 
+body {
+    background-color: #2f0231;
+}
+
 /* .carousel-inner {
     max-height: 400px !important;
 } */

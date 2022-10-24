@@ -1,6 +1,6 @@
 <% layout('/layouts/boilerplate')%>
 
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 card">
             <h1 class="text-center">Edit Group</h1>
             <form action="/groups/<%= group._id%>?_method=PUT" method="POST" novalidate class="to-validate" enctype="multipart/form-data">
                 <div class="mb-3">
@@ -31,6 +31,27 @@
                     <textarea class="form-control" type="text" id="description" name="group[description]" required><%= group.description%></textarea>
                     <div class="valid-feedback">
                         Lookin' good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="Contact">Contact - if people want to participate, who should they get in touch with and how?</label>
+                    <input class="form-control" type="text" id="contact" name="group[contact]" value="<%= group.contact%>">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="url">Website URL - please include "https://":</label>
+                    <input class="form-control" type="text" id="url" name="group[url]" value="<%= group.url%>">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="urlName">Website Name:</label>
+                    <input class="form-control" type="text" id="urlName" name="group[urlName]" value="<%= group.urlName%>">
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
                 </div>
                 <div class="mb-3">

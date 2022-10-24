@@ -1,5 +1,10 @@
 To Do for V1 Launch:
-- make it so only group creator can make/delete call to action (isUser? isCreator? middleware)
+- fix bug: edit for new groups fields (contact, url, urlname) requiring optional fields
+    -temporary fixed by removing validation, must correct
+- fix call edit/delete/create redirect
+- styling: 
+    -call to action form overlaps underlying container
+    -make better in general
 - add update/edit for calls
 - Create view profile page for currentUser
 - add Intercom
@@ -9,8 +14,10 @@ To Do for V1 Launch:
 - Add Intercom
 
 To Do less urgent:
+add protective middleware to routes
 Update logo
     add logo to navbar
+Fix link upload on callToAction so that if user puts https:// it does not break
 Create validation tier
 Make default zoom to area Asheville
 Add way for groups to associate

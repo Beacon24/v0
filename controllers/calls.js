@@ -24,8 +24,31 @@ module.exports.createCall = async (req, res) => {
 
 module.exports.deleteCall = async (req, res)=>{
     const { id, callId } = req.params;
+    console.log(req.params)
     await Group.findByIdAndUpdate(id, { $pull: {calls: callId } })
     await Call.findByIdAndDelete(req.params.callId);
     req.flash('success', 'Succesfully removed!')
     res.redirect(`/groups/${id}`)
+}
+
+module.exports.renderEditForm = async (req, res) => {
+    const { id, callId } = req.params;
+    console.log("req.params");
+    console.log(req.params);
+
+    const call = await Call.findById(callId);
+    const group = await Group.findById(id);
+    if(!call){
+        req.flash('error', 'call missing... :(');
+        return res.redirect('/calls')
+    } 
+    res.render('calls/edit', { call, group })
+}
+
+module.exports.updateCall = async (req, res) => {
+    const { id } = req.params;
+    const call = await Call.findByIdAndUpdate(id, { ...req.body.call })
+    await call.save();
+    req.flash('success', 'Succesfully updated call!')
+    res.redirect(`/groups/`)
 }

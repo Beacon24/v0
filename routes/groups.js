@@ -22,7 +22,7 @@ router.get('/new', isLoggedIn, groups.renderNewForm)
 
 router.route('/:id')
     .get(catchAsync(groups.showGroup))
-    .put(isLoggedIn, isCreator, upload.array('image'), validateGroup, catchAsync(groups.updateGroup))
+    .put(isLoggedIn, isCreator, upload.array('image'), catchAsync(groups.updateGroup))
     .delete(isLoggedIn, isCreator, catchAsync(groups.deleteGroup))
 
 

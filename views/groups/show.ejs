@@ -1,7 +1,7 @@
 <% layout('/layouts/boilerplate')%>
-<h1 class="card-title m-3"><%= group.title%></h1>
-<div class="row">
-    <div class="col-4">
+    <h1 class="card card-title"><%= group.title%></h1>
+    <div class="row">
+    <div class="card col-4">
         <div id="groupCarousel" class="carousel slide my-3" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% group.images.forEach((img, i) => { %> 
@@ -24,16 +24,17 @@
         <!-- <div class="my-3" id='map'>
         </div> -->
     </div>
-    <div class="col-8">
-        <div class="card mb-5">
+    <div class="card col-8">
             <div class="card-body">
               <p class="card-text"><%= group.description%></p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-muted"><b>Location: </b><%= group.location %></li>
               <li class="list-group-item"><b>Led by: </b><a href="/users/<%= group.creator.id %>"><%= group.creator.name %></a></li>
-              <li class="list-group-item"><b>Offerings:</b> <%= group.offerings %></li>
-              <li class="list-group-item"><b>Needs:</b> <%= group.needs %></li>
+              <li class="list-group-item"><b>Contact: </b><%= group.contact %></p>
+              <li class="list-group-item"><b>Link: <a href="<%= group.url %>" target="blank"></b><%= group.urlName %></a></p>
+              <li class="list-group-item"><b>Offerings: </b> <%= group.offerings %></li>
+              <li class="list-group-item"><b>Needs: </b> <%= group.needs %></li>
             </ul>
 
            
@@ -71,9 +72,9 @@
             </div>
 
             <a href="/groups" class="card-link btn btn-primary">Return to All</a>
-        </div>
-//this is what should be hidden
     </div>
+    </div>
+    <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
     <div class="row card">
       <div class="m-5 col-12">
         <h2>Create a Call to Action:</h2>
@@ -84,15 +85,15 @@
               <label class="form-label" for="description">Description:</label>
               <textarea class="form-control" name="call[description]" id="description" cols="" rows="3" required></textarea>
               <label for="location">Location:</label>
-              <input class="form-control" type="text" id="location" name="call[location]" required>
+              <input class="form-control" type="text" id="location" name="call[location]">
               <label for="time">Time:</label>
-              <input class="form-control" type="text" id="time" name="call[time]" required>
-              <label for="Contact">Contact:</label>
-              <input class="form-control" type="text" id="contact" name="call[contact]" required>
-              <label for="url">Website URL - please do not include "https://":</label>
-              <input class="form-control" type="text" id="url" name="call[url]" required>
+              <input class="form-control" type="text" id="time" name="call[time]">
+              <label for="Contact">Contact - if people want to participate, who should they get in touch with and how?</label>
+              <input class="form-control" type="text" id="contact" name="call[contact]">
+              <label for="url">Website URL - please include "https://":</label>
+              <input class="form-control" type="text" id="url" name="call[url]">
               <label for="urlName">Website Name:</label>
-              <input class="form-control" type="text" id="urlName" name="call[urlName]" required>
+              <input class="form-control" type="text" id="urlName" name="call[urlName]">
               
               
               <div class="valid-feedback">
@@ -103,26 +104,29 @@
               Create
             </button>
         </form>
-  
+    <% } %>
         <% for(let call of group.calls) { %>
         <div class="card mb-2">
+          <br>
+          <h2 class="card-title m4">     Calls to Action:</h2>
           <div class="card-body">
-            <p class="card-subtitle"><b>Name: </b><%= call.name %></p>
-            <p class="card-text"><b>Description:</b><%= call.description %></p>
-            <p class="card-text"><b>Location:</b><%= call.location %></p>
-            <p class="card-text"><b>Time:</b><%= call.time %></p>
-            <p class="card-text"><b>Contact:</b><%= call.description %></p>
-            <p class="card-text"><b>Link:<a href="https://<%= call.url %>" target="blank"></b><%= call.urlName %></a></p>
+            <h3 class="card-title"><%= call.name %></h3>
+            <p class="card-text"><%= call.description %></p>
+            <p class="card-text"><b>Location: </b><%= call.location %></p>
+            <p class="card-text"><b>Time: </b><%= call.time %></p>
+            <p class="card-text"><b>Contact: </b><%= call.contact %></p>
+            <p class="card-text"><b>Link: <a href="<%= call.url %>" target="blank"></b><%= call.urlName %></a></p>
+            <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
+            <a href="/groups/<%= group._id%>/calls/<%= call._id%>/edit" class="card-link btn btn-info">Edit</a>
             <form action="/groups/<%=group._id%>/calls/<%=call._id%>?_method=DELETE" method="POST">
               <button class="btn-sm btn-danger">Delete</button>
             </form>
-
+            <% } %>
           </div>
         </div>
         <% } %>
       </div>
   </div>
-    </div>
     
 
 <script>

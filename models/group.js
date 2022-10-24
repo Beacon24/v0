@@ -35,6 +35,13 @@ const GroupSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User' 
     },
+    contact: String,
+    urlName: String,
+    url: String,
+    Facebook: String,
+    Instragram: String,
+    otherLinkName: String,
+    otherLink: String,
     offerings: {
         type: String
     },

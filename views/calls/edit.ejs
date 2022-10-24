@@ -1,0 +1,59 @@
+<% layout('/layouts/boilerplate')%>
+        <div class="card col-md-6 offset-md-3">
+            <h1 class="text-center">Edit Call to Action</h1>
+
+            <form action="/groups/<%= group._id%>/calls/<%= call._id%>?_method=PUT" method="POST" novalidate class="to-validate">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="call[name]" value="<%= call.name%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description - a brief preview description of what your call is</label>
+                    <textarea class="form-control" type="text" id="summary" name="call[summary]" required><%= call.description%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>            
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="call[location]" value="<%= call.location%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="time">Time</label>
+                    <input class="form-control" type="text" id="time" name="call[time]" value="<%= call.time%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="contact">How can call leadership be contacted? Eventually you will be able to message and discuss through Beacon's own encrypted channels. For now, let people know how best to reach you.</label>
+                    <textarea class="form-control" type="text" id="contact" name="call[contact]"><%= call.contact%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="url">Website URL - please do not include 'https://</label>
+                    <textarea class="form-control" type="text" id="url" name="call[url]"><%= call.url%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="urlName">Where does this link go?</label>
+                    <textarea class="form-control" type="text" id="urlName" name="call[urlName]"><%= call.urlName%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                <button class="btn-success">Update Initiative</button>
+                </div>
+            </form>
+        </div>
