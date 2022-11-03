@@ -26,7 +26,7 @@ module.exports.register = async (req, res, next) => {
         req.login(registeredUser, err => {
             if(err) return next (err);
             req.flash('success', "Welcome to Beacon!");
-            res.redirect('/users')
+            res.redirect('/')
         })
     } catch(e) {
         req.flash('error', e.message)

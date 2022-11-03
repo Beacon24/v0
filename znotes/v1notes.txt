@@ -1,11 +1,11 @@
 To Do for V1 Launch:
+- fix heroku mongo auth
 - fix bug: edit for new groups fields (contact, url, urlname) requiring optional fields
     -temporary fixed by removing validation, must correct
 - fix call edit/delete/create redirect
 - styling: 
     -call to action form overlaps underlying container
     -make better in general
-- add update/edit for calls
 - Create view profile page for currentUser
 - add Intercom
 - hide user profiles (temporary)

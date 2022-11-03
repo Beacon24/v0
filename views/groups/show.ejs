@@ -1,7 +1,9 @@
 <% layout('/layouts/boilerplate')%>
-    <h1 class="card card-title"><%= group.title%></h1>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"><%= group.title%></h1>
     <div class="row">
-    <div class="card col-4">
+    <div class="card-body col-4">
         <div id="groupCarousel" class="carousel slide my-3" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% group.images.forEach((img, i) => { %> 
@@ -21,10 +23,35 @@
           </button>
           <% } %> 
         </div>
+        <div class="card-body">
+          <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
+          <a href="/groups/<%= group._id%>/edit" class="card-link btn btn-info">Edit</a>
+          <form class="d-inline" action="/groups/<%= group._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">
+                Delete
+            </button>
+            </form>
+            <a href="/groups" class="card-link btn btn-primary">Return to All</a>
+          <% } %>
+    <!-- THIS IF STATEMENT IS NOT WORKING -->
+          <!-- <% if( group.members.includes('currentUser.name') ) { %>
+            <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
+              <button class="btn btn-danger">
+                  Leave
+              </button>
+            </form>
+          <% } else { %>
+            <form class="d-inline" action="/groups/<%= group._id%>/join" method="POST">
+              <button class="btn btn-danger">
+                  Join
+              </button>
+            </form>
+          <% } %> -->
+        </div>
         <!-- <div class="my-3" id='map'>
         </div> -->
     </div>
-    <div class="card col-8">
+    <div class="card-body col-8">
             <div class="card-body">
               <p class="card-text"><%= group.description%></p>
             </div>
@@ -45,41 +72,16 @@
               <% } %> 
 
             </div> -->
-
-            <div class="card-body">
-              <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
-              <a href="/groups/<%= group._id%>/edit" class="card-link btn btn-info">Edit</a>
-              <form class="d-inline" action="/groups/<%= group._id%>?_method=DELETE" method="POST">
-                <button class="btn btn-danger">
-                    Delete
-                </button>
-                </form>
-              <% } %>
-        <!-- THIS IF STATEMENT IS NOT WORKING -->
-              <!-- <% if( group.members.includes('currentUser.name') ) { %>
-                <form class="d-inline" action="/groups/<%= group._id%>/leave?_method=DELETE" method="POST">
-                  <button class="btn btn-danger">
-                      Leave
-                  </button>
-                </form>
-              <% } else { %>
-                <form class="d-inline" action="/groups/<%= group._id%>/join" method="POST">
-                  <button class="btn btn-danger">
-                      Join
-                  </button>
-                </form>
-              <% } %> -->
-            </div>
-
-            <a href="/groups" class="card-link btn btn-primary">Return to All</a>
     </div>
     </div>
+  </div>
+</div>
+<div class="card my-5">
     <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
-    <div class="row card">
-      <div class="m-5 col-12">
+    <div class="row card-body">
+      <div class="">
         <h2>Create a Call to Action:</h2>
-        <form class="mb-3 to-validate" action="/groups/<%=group._id%>/calls" method="POST" novalidate>
-            <div class="card-body mb-3">
+        <form class="form-group to-validate" action="/groups/<%=group._id%>/calls" method="POST" novalidate>
               <label for="name">Name:</label>
               <input class="form-control" type="text" id="name" name="call[name]" required>
               <label class="form-label" for="description">Description:</label>
@@ -93,22 +95,23 @@
               <label for="url">Website URL - please include "https://":</label>
               <input class="form-control" type="text" id="url" name="call[url]">
               <label for="urlName">Website Name:</label>
-              <input class="form-control" type="text" id="urlName" name="call[urlName]">
-              
-              
+              <input class="form-control" type="text" id="urlName" name="call[urlName]">  
               <div class="valid-feedback">
                 Looks good!
               </div>
-            </div>
             <button class="btn-success">
               Create
             </button>
         </form>
     <% } %>
-        <% for(let call of group.calls) { %>
-        <div class="card mb-2">
+      </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title m4">     Calls to Action:</h2>
+      <% for(let call of group.calls) { %>
+        <div class="card card-body mb-2">
           <br>
-          <h2 class="card-title m4">     Calls to Action:</h2>
           <div class="card-body">
             <h3 class="card-title"><%= call.name %></h3>
             <p class="card-text"><%= call.description %></p>
@@ -125,8 +128,9 @@
           </div>
         </div>
         <% } %>
-      </div>
+    </div>
   </div>
+</div>
     
 
 <script>
