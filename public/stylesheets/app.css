@@ -73,19 +73,30 @@ body {
 }
 
 .outer-card {
-    background-color: rgb(51, 48, 48);
-    color: white;
+    background-color: white;
+    color: black;
     border-radius: 10px;
-    border-color: #AA282B;
-    border-width: 2px;
+    border-color: #98223C;
+    border-width: 3px;
 }
 
 .inner-card {
-    color: black;
+    color: white;
+    background-color: black;
 }
 
 .card {
     border-radius: 10px;
+}
+
+.index-img {
+    border-radius: 30px;
+}
+
+.index-map {
+    border-color: #98223C;
+    border-width: 3px;
+    border-radius: 15px;
 }
 
 /* .carousel-inner {

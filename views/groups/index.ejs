@@ -1,18 +1,18 @@
 
     <% layout('/layouts/boilerplate')%>
-    <div class="card m-2" id="cluster-map-groups">
+    <div class="card index-map my-3" id="cluster-map-groups">
     </div>
-    <div class="card outer-card m-2">
+    <div class="card outer-card">
         <div class="card-body">
             <h2 class="card-title mt-3">Groups</h2>
             <ul>
             <a href="groups/new"><button class="m-1 mt-3 btn btn-primary">Add a Group</button></a>
             <% for (let group of groups) {%>
-                    <div class="card my-3">
+                    <div class="card inner-card my-3">
                         <div class="row">
                             <div class="col-md-4">
                                 <% if(group.images.length) { %> 
-                            <img class="img-fluid" src="<%= group.images[0].url%>" alt=""> 
+                            <img class="img-fluid p-3 index-img" src="<%= group.images[0].url%>" alt=""> 
                                 <% }else {%> 
                                 <img class="img-fluid" src="" alt="">
                                 <% } %> 
