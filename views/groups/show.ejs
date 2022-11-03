@@ -76,11 +76,12 @@
     </div>
   </div>
 </div>
-<div class="card my-5">
+<% if(group.calls.length > 0) { %>
+<div class="card my-5 outer-card">
   <h2 class="card-title m-4">Calls to Action:</h2>
     <div class="card-body">
       <% for(let call of group.calls) { %>
-        <div class="card card-body mb-2">
+        <div class="card card-body inner-card mb-2">
           <br>
           <div class="card-body">
             <h3 class="card-title"><%= call.name %></h3>
@@ -100,6 +101,7 @@
         <% } %>
     </div>
   </div>
+  <% } %>
   <% if( currentUser && group.creator.equals(currentUser._id) ) { %> 
   <div class="card my-5">
     <div class="row card-body">
