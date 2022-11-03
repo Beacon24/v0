@@ -1,40 +1,37 @@
 
     <% layout('/layouts/boilerplate')%>
-    <div id="cluster-map-groups">
+    <div class="card m-2" id="cluster-map-groups">
     </div>
-    <div>
-        <a href="groups/new"><button class="m-1 mt-3 btn btn-primary">Add a Group</button></a>
-        <button class="m-1 mt-3 btn btn-dark">Asheville/WNC</button>
-        <button class="m-1 mt-3 btn btn-secondary">Chapel Hill and Carboro, NC</button>
-        <button class="m-1 mt-3 btn btn-secondary">Naples, FL</button>
-    </div>
-    <div class="card">
-    <ul>
-        <h2 class="card-title mt-3">Groups</h2>
-        <% for (let group of groups) {%>
-                <div class="card my-3">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <% if(group.images.length) { %> 
-                           <img class="img-fluid" src="<%= group.images[0].url%>" alt=""> 
-                            <% }else {%> 
-                            <img class="img-fluid" src="" alt="">
-                            <% } %> 
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= group.title %></h5>
-                                <p class="card-text"><%= group.description.substring(0,300) %></p>
-                                <p class="card-text text-muted">
-                                    <%= group.location %>
-                                </p>
-                                <a href="/groups/<%= group._id%>" class="btn btn-primary">View <%= group.title%></a>
+    <div class="card outer-card m-2">
+        <div class="card-body">
+            <h2 class="card-title mt-3">Groups</h2>
+            <ul>
+            <a href="groups/new"><button class="m-1 mt-3 btn btn-primary">Add a Group</button></a>
+            <% for (let group of groups) {%>
+                    <div class="card my-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <% if(group.images.length) { %> 
+                            <img class="img-fluid" src="<%= group.images[0].url%>" alt=""> 
+                                <% }else {%> 
+                                <img class="img-fluid" src="" alt="">
+                                <% } %> 
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= group.title %></h5>
+                                    <p class="card-text"><%= group.description.substring(0,300) %></p>
+                                    <p class="card-text text-muted">
+                                        <%= group.location %>
+                                    </p>
+                                    <a href="/groups/<%= group._id%>" class="btn btn-primary">View <%= group.title%></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        <% } %>
-    </ul>
+            <% } %>
+            </ul>
+        </div>
     </div> 
     <script>
         const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
