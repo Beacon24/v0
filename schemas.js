@@ -24,9 +24,6 @@ module.exports.initiativeSchema = Joi.object({
 module.exports.userSchema = Joi.object({
     user: Joi.object({
         username: Joi.string().required(),
-        email: Joi.string().required(),
-        location: Joi.string().required(),
-        bio: Joi.string()
     }).required(),
     deleteImages: Joi.array()
 })

@@ -13,9 +13,8 @@ module.exports.renderRegister = (req, res) => {
 module.exports.register = async (req, res, next) => {
     try {
         //i dont think im doing this const declaration in a good way, why cant i use req.body.user?
-        const { email, username, password, name, location, bio, interests, offerings, needs, geometry, images } = req.body;
-        const user = new User({ email, username, name, location, bio, interests, offerings, needs, geometry, images });
-        user.images = req.files.map(f => ({ url: f.path, filename: f.filename }))       
+        const { username, email, password, name, location, geometry } = req.body;
+        const user = new User({ username, email, name, location, geometry });
         const geoData = await geocoder.forwardGeocode({
             query: user.location,
             limit: 1

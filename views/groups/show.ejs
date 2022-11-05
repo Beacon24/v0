@@ -51,13 +51,12 @@
         <!-- <div class="my-3" id='map'>
         </div> -->
     </div>
-    <div class="card-body col-8">
+    <div class="card-body col-8 col-xs-12">
             <div class="card-body">
               <p class="card-text"><%= group.description%></p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-muted"><b>Location: </b><%= group.location %></li>
-              <li class="list-group-item"><b>Led by: </b><a href="/users/<%= group.creator.id %>"><%= group.creator.name %></a></li>
               <li class="list-group-item"><b>Contact: </b><%= group.contact %></p>
               <li class="list-group-item"><b>Link: <a href="<%= group.url %>" target="blank"></b><%= group.urlName %></a></p>
               <li class="list-group-item"><b>Offerings: </b> <%= group.offerings %></li>
@@ -138,7 +137,7 @@
 
 <script>
   const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-  const group = <%-JSON.stringify(group)%> 
+
 </script>
 
 <script src="/javascripts/showPageMap.js"></script>

@@ -13,7 +13,7 @@ const { groupSchema } = require('../schemas.js');
 
 
 router.route('/') 
-    .get(catchAsync(groups.index))
+    .get(isLoggedIn, catchAsync(groups.index))
     .post(isLoggedIn, upload.array('image'), validateGroup, catchAsync(groups.createGroup))
 
 router.get('/new', isLoggedIn, groups.renderNewForm)

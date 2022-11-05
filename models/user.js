@@ -20,8 +20,6 @@ const UserSchema = new Schema({
         required: true,
         unique: true
     },
-    bio: String,
-    images: [ImageSchema],
     geometry: {
         type: {
             type: String,
@@ -34,21 +32,12 @@ const UserSchema = new Schema({
         }
     },
     location: String,
-    interests: String,
-    offerings: String,
-    needs: String,
     groups: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Group'
         }
     ],
-    initiatives: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Initiative'
-        }
-    ]
 }, opts);
 
 UserSchema.virtual('properties.popUpMarkup').get(function(){

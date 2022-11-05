@@ -13,7 +13,7 @@ module.exports.createCall = async (req, res) => {
     group.calls.push(call);
     await call.save();
     await group.save();
-    req.flash('success', 'YOU CREATED AN INITIATIVE!')
+    req.flash('success', 'Call to action created!')
     res.redirect(`/groups/${group._id}`);
 }
 
