@@ -17,6 +17,8 @@ const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const http = require('http');
+const enforce = require('express-sslify');
 
 const mongoSanitize = require('express-mongo-sanitize');
 
@@ -56,6 +58,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(enforce.HTTPS());
 app.use(mongoSanitize({
     replaceWith: '_'
 }));
@@ -137,4 +140,10 @@ const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`BEACON LIT ON PORT ${port}`.rainbow)
 })
+
+http.createServer(app).listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + app.get('port'));
+});
+
+
 
