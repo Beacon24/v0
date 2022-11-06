@@ -58,7 +58,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(enforce.HTTPS());
+app.use(enforce.HTTPS({ trustProtoHeader: true }))
 app.use(mongoSanitize({
     replaceWith: '_'
 }));
@@ -141,6 +141,9 @@ app.listen(port, () => {
     console.log(`BEACON LIT ON PORT ${port}`.rainbow)
 })
 
+http.createServer(app).listen(app.get('port'), function() {
+    console.log('Express server listening on port ' + app.get('port'));
+});
 
 
 
