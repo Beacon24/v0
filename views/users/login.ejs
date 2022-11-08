@@ -7,10 +7,10 @@
                 <img src=../../images/logoD2.png
                     alt="" class="card-img-top" id="logoCard" />
                 <div class="card-body">
-                    <h5 class="card-title">Login</h5>
+                    <h5 class="card-title text-center">Login</h5>
                     <form action="/users/login" method="POST" class="validated-form" novalidate>
                         <div class="mb-3">
-                            <label class="form-label" for="username">Username</label>
+                            <label class="form-label" for="username">Email:</label>
                             <input class="form-control" type="text" id="username" name="username" autofocus required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -18,13 +18,14 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="password">Password</label>
+                            <label class="form-label" for="password">Password:</label>
                             <input class="form-control" type="password" id="password" name="password" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
-                        <button class="btn btn-success btn-block">Login</button>
+                        <button class="btn text-center btn-success btn-block">Login</button>
+                        <p class="card-body mt-2">Lost password? Email jdubin@thebeaconnetwork.org.</p>
                     </form>
                 </div>
             </div>
