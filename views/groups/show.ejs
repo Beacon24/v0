@@ -3,7 +3,7 @@
   <div class="card-body">
     <h1 class="card-title"><%= group.title%></h1>
     <div class="row">
-    <div class="card-body col-4">
+    <div class="card-body col-md-2 col-s-12 col-xs-12 col-4">
         <div id="groupCarousel" class="carousel slide my-3" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% group.images.forEach((img, i) => { %> 
@@ -51,7 +51,7 @@
         <!-- <div class="my-3" id='map'>
         </div> -->
     </div>
-    <div class="card-body col-8 col-xs-12">
+    <div class="card-body col-8 col-s-12 col-xs-12">
             <div class="card-body">
               <p class="card-text"><%= group.description%></p>
             </div>

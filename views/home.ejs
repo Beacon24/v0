@@ -1,41 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="/stylesheets/home.css">
-    <title>Beacon</title>
-</head>
+<% layout('/layouts/boilerplate')%>
+    <div class="card" id="home-card"> 
+                <div class="card-body row">
+                    <div class="container col-xs-6 text-center">
+                        <h1 class="mt-4 text-center">The Beacon Network</h1>
+                        <img id="logo1" class="img-fluid align-center my-.5" src=../images/logoD2.png alt="Logo should be here">
+                    </div>
+                </div>
+                <div class="card-body col-xs-6 mb-5 row">
+                    <div class="text-center">
+                        <a href="/users/register" class="btn btn-secondary">Create an Account</a>
+                        <a href="/groups" class="btn btn-secondary">Explore the Map</a>
+                        <a href="https://www.thebeaconnetwork.org/become-a-supporter" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Give to Support Beacon</a>
+                    </div>
+                </div>
 
-
-<body class="d-flex text-center text-white bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <%- include('partials/navbar')%>
-        </header>
-        <main class="w-100 px-3">
-            <h1 class="mt-4">The Beacon Network</h1>
-            <!-- <div id="cluster-map">
-            </div> -->
-                <img id="logo1" class="align-center my-.5" src=../images/logoD2.png alt="Logo should be here">
-                    <a href="/users/register" class="btn btn-secondary">Create an Account</a>
-                    <a href="/groups" class="btn btn-secondary">Explore the Map</a>
-                    <a href="https://www.thebeaconnetwork.org/become-a-supporter" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Give to Support Beacon</a>
-                </main>
-        <footer class="mt-auto text-white-50">
-            <p>&copy; 2021 Beacon</p>
-        </footer>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
 
     </script>
-
-    <script src="/javascripts/clusterMap.js"></script>
-</body>
-</html>
