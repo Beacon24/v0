@@ -1,0 +1,89 @@
+<% layout('/layouts/boilerplate')%>
+<div class="row">
+    <div>
+        <h1 class="text-center">New Group</h1>
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow">
+            <div class="card-body">
+            <form action="/groups" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label class="form-label" for="title">Name</label>
+                    <input class="form-control" type="text" id="title" name="group[title]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="group[location]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add image(s)!</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple>
+                </div>
+                <!-- TO DO LATER: Image upload quantity and size limits. Figure out how to get multiple files to display in form once selected. 
+                    <div class="mb-3">
+                    <label class="form-label" for="image">Image URL</label>
+                    <input class="form-control" type="text" id="location" name="group[image]" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="group[description]" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                    <div class="mb-3">
+                        <label for="Contact">Contact - if people want to participate, who should they get in touch with and how?</label>
+                        <input class="form-control" type="text" id="contact" name="group[contact]">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="url">Website URL - please include "https://":</label>
+                        <input class="form-control" type="text" id="url" name="group[url]">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="urlName">Website Name:</label>
+                        <input class="form-control" type="text" id="urlName" name="group[urlName]">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                <div class="mb-3">
+                    <label class="form-label" for="offerings">What do you have to offer or share?</label>
+                    <textarea class="form-control" type="text" id="offerings" name="group[offerings]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="needs">What do you need, what assistance could you use?</label>
+                    <textarea class="form-control" type="text" id="needs" name="group[needs]"></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                <button class="btn-success">Add group</button>
+                </div>
+            </form>
+            </div>
+            </div>
+            <footer>
+                <a href="/groups">All groups</a>
+            </footer>        
+        </div>
+    </div>
+</div>
+

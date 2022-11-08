@@ -1,0 +1,87 @@
+To Do for V1 Launch:
+- delete are you sure popup
+- fix bug: edit for new groups fields (contact, url, urlname) requiring optional fields
+    -temporary fixed by removing validation, must correct
+- fix call edit/delete/create redirect
+- styling: 
+
+
+- Create view profile page for currentUser
+- add Intercom
+- hide user profiles (temporary)
+- auto zoom-to Asheville region
+- fork a production vs. dev app?
+- Add Intercom
+
+To Do less urgent:
+add protective middleware to routes
+Update logo
+    add logo to navbar
+Fix link upload on callToAction so that if user puts https:// it does not break
+Create validation tier
+Make default zoom to area Asheville
+Add way for groups to associate
+Add option for additional user admins in groups
+Fix explore groups/explore routes
+
+
+Bug Fixes:
+   - Calls to Action not showing properly on group show page - fixed, was problem with populate syntax
+   - Leave groups
+
+
+Secondary: 
+Create tutorial walkthrough (with 3rd party service)
+Create Asheville/Chapel Hill Tabs
+
+
+Iterations:
+
+Profile Page - allow users to view and edit their own profile, with a link in navbar to get there.
+
+Validation tier - add field to User model, boolean "verified: true/false"
+    we manually toggle this field after receiving verification credentials
+    If profileX validated, show other validated profiles. Hide from unvalidated. 
+        this must exist when verified:
+        - navbar Users link
+        - showing members of groups (only if user is also member - eventually add?) (once this function re-added)
+        - access to group leader profile pages
+
+Re-add joinGroup function, fix leaveGroup function
+    Both currently commented out, leaveGroup not working. See github issue #19.
+
+Add admin true/false boolean to members of groups
+    How do we make this so group leaders can choose members or approve requests?
+    Propose specs
+
+
+
+
+
+
+
+ERRORS:
+on launch
+
+
+
+
+
+
+
+Old Instructions/content
+
+    cut from homepage
+    <p class="homeText lead p-2"> Welcome to <strong>the Beacon Network!</strong><br>
+        Thanks for helping us test the platform at this early stage!<br>
+        Here you will find a database of <b>user, group, and initiative pages</b> that highlight avenues to participation.<br>
+        Create an account to explore, join, and create groups and initiatives.
+    </p>
+
+    <p class="homeText lead p-2">
+    Soon, you'll be able to search and filter through these pages to find the communities and causes you care about.<br>
+    In version 2, you'll be able to communicate directly with other users and groups right on Beacon, with encrypted threaded discussions, group chat, and direct messaging.
+    </p>
+
+
+

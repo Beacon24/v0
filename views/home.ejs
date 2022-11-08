@@ -1,0 +1,23 @@
+<% layout('/layouts/boilerplate')%>
+    <div class="card" id="home-card"> 
+                <div class="card-body row">
+                    <div class="container col-xs-6 text-center">
+                        <h1 class="mt-4 text-center">The Beacon Network</h1>
+                        <img id="logo1" class="img-fluid align-center my-.5" src=../images/logoD2.png alt="Logo should be here">
+                    </div>
+                </div>
+                <div class="card-body col-xs-6 mb-5 row">
+                    <div class="text-center">
+                        <a href="/users/register" class="btn btn-secondary">Create an Account</a>
+                        <a href="/groups" class="btn btn-secondary">Explore the Map</a>
+                        <a href="https://www.thebeaconnetwork.org/become-a-supporter" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Give to Support Beacon</a>
+                    </div>
+                </div>
+
+    </div>
+
+
+    <script>
+        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+
+    </script>

@@ -1,0 +1,34 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('test');
+db.initiatives.aggregate([
+    {
+        $search: {
+            index: 'firstInitiatives',
+            compound:{
+                "should":[
+                    {    
+                        "autocomplete": {
+                            query: 'Party',
+                            path: 'title'
+                        }
+                          
+                    },
+                    {
+                        "text": {
+                            query: 'Western',
+                            path: 'summary'
+                        }
+                    }
+                ]
+            }
+        }
+    },{
+         $project: {_id:0, title:1}
+    }
+
+])

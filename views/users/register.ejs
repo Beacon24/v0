@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate')%>
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="card shadow col-12">
+                <div class="card-body">
+                    <h1 class="card-title text-center mt-3">Welcome to Beacon!</h1>
+                </div>
+
+                <div class="card-body">
+                        <form action="/users/register" method="POST" class="to-validate" enctype="multipart/form-data" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label" for="username"><b>Email</b></label>
+                                <input class="form-control" type="text" id="username" name="username" required autofocus>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Please re-enter your <b>email</b>:</label>
+                                <input class="form-control" type="email" id="email" name="email" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="email"><b>Name</b></label>
+                                <input class="form-control" type="name" id="name" name="name" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password"><b>Password</b></label>
+                                <input class="form-control" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="image" class="form-label">Add a Profile Picture!</label>
+                                <input class="form-control" type="file" name="image" id="image" multiple>
+                            </div> -->
+                            <div class="mb-3">
+                                <label class="form-label" for="location"><b>Location</b> - City, state. This information will not be shown.</label>
+                                <input class="form-control" type="text" id="location" name="location" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        <button class="btn btn-success btn-block">Register</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+
+

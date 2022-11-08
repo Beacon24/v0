@@ -1,0 +1,41 @@
+Functions not working:
+Leave groups, stop supporting initiatives
+How to create search function?
+    Explore route, can I search through all three collections (users, inits, groups) at one?
+How to create filter functions?
+    Within range, by category, needs, offerings
+
+Questions: 
+
+If there's time:
+What are cluster shards?
+How does Mongo pay scale work?
+Can I hide data entries (i.e. root user?)
+
+Normalization
+
+
+{
+        $search: {
+            index: 'First',
+            compound:{
+                "should":[
+                    {    
+                        "autocomplete": {
+                            query: 'club',
+                            path: 'title'
+                        }
+                          
+                    },
+                    {
+                        "text": {
+                            query: 'club',
+                            path: 'Description'
+                        }
+                    }
+                ]
+            }
+        }
+    },{
+         $project: {_id:0, title:1}
+    }

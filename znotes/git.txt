@@ -1,0 +1,29 @@
+git clone https://github.com/Beacon24/v0.git
+clones repo at url to current directory
+
+test 1
+
+git clone https://github.com/Beacon24/v1dev.git
+
+git add <filename>
+    adds file <filename> to working tree 
+git add .
+    adds all files to working tree
+
+git commit -m "your message here"
+    commits changes to create "save point" with custom message in ""
+
+git checkout -b <branch name>
+    create and switch to branch <branch name>
+
+git checkout <branch name>
+    switched to <branch name> branch
+
+
+
+merge conflict when pushing or pulling?
+manually fix the file to make it correct
+git add .
+git commit -m "change"
+
+

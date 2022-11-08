@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- this mapbox script can be moved to its own partial later, and applied only to relevant pages. -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="/stylesheets/app.css" rel="stylesheet">
+    <!-- Givebutter Elements -->
+    <script>
+        window.Givebutter=window.Givebutter||function(){(Givebutter.q=Givebutter.q||[]).push(arguments)};Givebutter.l=+new Date;
+        window.Givebutter('setOptions',
+        {
+            "accountId": "DWbe2UPkrjQ4OtCS"
+        });
+      </script>
+      <script async src="https://js.givebutter.com/elements/latest.js" ></script>
+    <!-- End Givebutter Elements -->
+
+    <title>Beacon</title>
+</head>
+<body class="d-flex flex-column vh-100">
+    <%- include('../partials/navbar')%>
+    <main class="container mt-5">
+    <%- include('../partials/flash')%>
+      <%- body %>
+    </main>
+    <%- include('../partials/footer')%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+    <script src='/javascripts/validateforms.js'></script>
+</body>
+</html>

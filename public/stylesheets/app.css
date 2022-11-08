@@ -1,0 +1,119 @@
+#cluster-map {
+    width: 100%;
+    height: 650px;
+}
+
+#cluster-map-groups {
+    width: 100%;
+    height: 400px;
+}
+
+#cluster-map-users {
+    width: 100%;
+    height: 400px;
+}
+
+#cluster-map-explore {
+    width: 100%;
+    height: 600px;
+}
+
+#cluster-map-initiatives {
+    width: 100%;
+    height: 400px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+}
+
+.carousel {
+    height: 300px;
+}
+
+#login {
+    width: 300px;
+}
+#homeText {
+    background-color:black;
+    opacity: 50%;
+}
+
+#homeText2 {
+    background-color:black;
+    opacity: 50%;
+}
+
+.nav-link {
+    padding: 0.25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    margin-left: 1rem;
+    border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom-color: white;
+    color: white;
+}
+
+.btn-secondary, .btn-secondary:hover {
+    color: #333;
+    text-shadow: none;
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color: white
+}
+
+body {
+    background-color: #2f0231;
+}
+
+.outer-card {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border-color: #98223C;
+    border-width: 3px;
+}
+
+.inner-card {
+    color: white;
+    background-color: black;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.index-img {
+    border-radius: 30px;
+}
+
+.index-map {
+    border-color: #98223C;
+    border-width: 3px;
+    border-radius: 15px;
+}
+
+/* Styles for homepage */
+
+#home-card {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=913&q=80');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 5rem black;
+}
+
+
+
+
+/* .carousel-inner {
+    max-height: 400px !important;
+} */
+

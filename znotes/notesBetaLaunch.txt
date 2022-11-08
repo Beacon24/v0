@@ -1,0 +1,86 @@
+~~CODING PRIORITIES (ASAP)~~
+- Show current user profile 
+    - put in navbar
+- Init edit bug
+
+
+
+
+Alert all beta testers that their info will be visible to other testers, and ONLY other testers. 
+Disclaimer that full security measures have not yet been implemented, but likelihood of any penetration/attack is low. 
+Any trouble at all email me directly
+Let users know security is low, we are working on privacy features like ask-for-approval to join groups
+
+MAKE DATA READY FOR SEARCH FUNCTION ADDITION 
+
+Why is it so slow?
+
+Questions to ask users:
+
+- are we asking for and presenting the correct information? 
+
+
+
+~~~*~~~Bugs/Upgrades/Details~~~*~~~
+QUESTIONS FOR MONGODB
+Remove Test/Root profile from view
+
+Make it so users can leave groups/inits
+
+Abbe Walkthrough
+Registration - password text
+asterisks for required
+Why is home still selected after resgiration
+tell people to scroll down to view profiles
+direct access to profiles thru group pages? check security
+usernames on user map
+explain how map works, explain how to add own initiatives and groups
+overlapping blips on map for duplicate locations
+remove submit button on explore page
+
+fork apps? beta vs. dev?
+
+~~Security:
+Make opt-in/out for visible user profiles
+How to let users change passwords? Learn more about how our user auth works
+    Double type password to confirm?
+Permission to join groups?
+Permission to support initiatives?
+How do we make groups "private?"
+
+~~Errors:
+Username shows up in explore map popups - others too?
+Navbar does not highlight current page
+When asked to login, afterwords use should be returned to former page but seems instead to go to error page
+"Cannot read properties of undefined (reading 'map')
+    at module.exports.updateInitiative (/home/jared/Beacon/Beacon 0.21/controllers/initiatives.js:72:28)"
+Back to previous page button on error page?
+Initiative edit bug, problem with .map ?
+Switch username to use name in user profiles, group members, initiative supporters
+Hide edit user info button if user is not viewing own profile
+When user tries to login to non-existant account, appropriate error message
+When user tries to login with incorrect password, appropriate error message
+Add 'go back' button to error page
+
+~~Upgrades:
+
+- Upgrade mongoose?
+- connect-mongo, had to downgrade to v 3.1.2 to avoid bug, how to upgrade?
+
+~~User Experience
+- Make text boxes in edit view bigger by default
+
+
+Network Development
+In service of abortion rights and access
+    Contact directors of local abortion clinics. 
+    Contact leaders of networks in surrounding states (how?)
+Legality
+    Consult with lawyer - maybe Pisgah legal? (tre, Gabe)
+Beta follow-up
+    Send email to everyone who signed up
+Social Media Mini-Campaign
+    Publish slides on "how to get attention"
+    Promote through main insta page
+RJC
+    Follow-up with tre 

@@ -1,0 +1,51 @@
+
+    <% layout('/layouts/boilerplate')%>
+    <h1 class="mb-5 text-center">Explore and Launch Initiatives!</h1>
+    <p class="card-text">Initiatives are specific calls to action.</p>
+    <div id="cluster-map-initiatives">
+    </div>
+    <div>
+        <a href="initiatives/new"><button class="m-1 mt-3 btn btn-primary">Add an initiative</button></a>
+        <button class="m-1 mt-3 btn btn-dark">Filter</button>
+        <button class="m-1 mt-3 btn btn-secondary">Search</button>
+    </div>
+    <div class="">
+    <ul>
+        <% for (let initiative of initiatives) {%>
+                <div class="card mt-5 mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <% if(initiative.images.length) { %> 
+                           <img class="img-fluid" src="<%= initiative.images[0].url%>" alt=""> 
+                            <% }else {%> 
+                            <img class="img-fluid" src="" alt="">
+                            <% } %> 
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3"><%= initiative.title %></h5>
+                                <p class="card-text text-muted">
+                                    <b>Location: </b><%= initiative.location %>
+                                </p>
+                                <p class="card-text text-muted">
+                                    <b>Time: </b><%= initiative.time %>
+                                </p>
+                                <p class="card-text text-muted">
+                                    <%= initiative.summary %>
+                                </p>                                
+                                <a href="/initiatives/<%= initiative._id%>" class="btn btn-primary">View <%= initiative.title%></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
+    </ul>
+    </div> 
+    <script>
+        const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+        const initiatives = {features: <%- JSON.stringify(initiatives) %>}
+    </script>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+    <script src="/javascripts/clusterMapInitiatives.js"></script>
