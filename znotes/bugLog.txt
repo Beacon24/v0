@@ -1,0 +1,3 @@
+Map search prob shouldn't populate commercial listings. Or any non beacon items really.
+
+password problems

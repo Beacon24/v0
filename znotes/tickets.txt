@@ -1,0 +1,8 @@
+Auth Stuff:
+    - Password rejects
+    - Password recovery
+    - Password confirm at sign-up
+
+Users:
+    - add authentication tier (see other notes for specs)
+    
