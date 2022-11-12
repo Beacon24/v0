@@ -5,4 +5,12 @@ Auth Stuff:
 
 Users:
     - add authentication tier (see other notes for specs)
-    
+
+Groups: 
+    - allow admin status for non-group creators
+        -can create/edit calls to action, group info (cannot delete?)
+    - join/leave groups, reinstate with validation options
+    - location-based feed with search
+
+UX:
+    - 

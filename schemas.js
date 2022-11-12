@@ -6,11 +6,6 @@ module.exports.groupSchema = Joi.object({
         location: Joi.string().required(),
         // image: Joi.string().required(),
         description: Joi.string().required(),
-        needs: Joi.string(),
-        offerings: Joi.string(),
-        contact: Joi.string(),
-        url: Joi.string(),
-        urlName: Joi.string()
     }).required(),
     deleteImages: Joi.array()
 })
