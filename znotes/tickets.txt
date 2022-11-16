@@ -11,6 +11,7 @@ Groups:
         - make fields optional (url, needs, wants, etc)
         - return to all link is in weird spot
         - header is dark font against dark bg, not aligned properly
+    - private groups option with authentication tier
     - allow admin status for non-group creators
         -can create/edit calls to action, group info (cannot delete?)
     - join/leave groups, reinstate with validation options
